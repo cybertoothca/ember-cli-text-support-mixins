@@ -2,6 +2,10 @@
   "name": "ember-cli-text-field-mixins",
   "dependencies": {
     "ember": "~2.9.0",
-    "ember-cli-shims": "0.1.3"
+    "ember-cli-shims": "0.1.3",
+    "keyevent": "^1.0.0",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "bootswatch": "^3.3.7"
   }
 }

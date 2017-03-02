@@ -1,0 +1,56 @@
+<section class="container">
+  <div class="page-header">
+    <h1>Demo</h1>
+  </div>
+  <h2><code>\{{input-text}}</code></h2>
+  <p>
+    By default, the <code>\{{input-text}}</code> will: clear its contents when the Escape key is pressed,
+    select any text when the input takes focus, and will <em>autofocus</em> will work across transitions and
+    re-rendering of the template.
+  </p>
+  <p>The following properties can be used to toggle the aforementioned behaviours.</p>
+  <ul>
+    <li><code>escapeKeyClears?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+    </li>
+    <li><code>focusSelectsText?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+    </li>
+  </ul>
+</section>
+<section class="container">
+  <fieldset>
+    <legend>Autofocus</legend>
+    <div class="form-group">
+      <label for="js-autofocus" class="control-label"><code>autofocus=true</code> Works Across Re-Renders</label>
+      {{input-text autofocus=true class="form-control" id="js-autofocus" escapeKeyClears?=false focusSelectsText?=false
+                   placeholder="Autofocus Works Across Re-Renders" value="This textbox is focused..."}}
+      <div class="help-block">
+      <pre>\{{input-text autofocus=true class="form-control" escapeKeyClears?=false
+      focusSelectsText?=false placeholder="..." value="..."}}</pre>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Focus Selects Text</legend>
+    <div class="form-group">
+      <label for="js-focus-selects-text" class="control-label">Text Is Selected On Focus</label>
+      {{input-text class="form-control" escapeKeyClears?=false
+                   placeholder="Autofocus Works Across Re-Renders"
+                   value="Tab to or click into textbox to focus and select"}}
+      <div class="help-block">
+      <pre>\{{input-text class="form-control" escapeKeyClears?=false
+      placeholder="..." value="..."}}</pre>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Escape Press Clears</legend>
+    <div class="form-group">
+      <label for="js-escape-key-clears" class="control-label"><kbd>Escape</kbd> Press Clears</label>
+      {{input-text class="form-control" id="js-escape-key-clears" placeholder="Escape Press Clears"
+                   value="Press the escape key to clear the text..."}}
+      <p class="help-block">
+
+      </p>
+    </div>
+  </fieldset>
+</section>

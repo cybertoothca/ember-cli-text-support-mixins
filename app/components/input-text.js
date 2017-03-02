@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-text-field-mixins/components/input-text';

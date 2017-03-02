@@ -1,0 +1,14 @@
+@import "../../../../bower_components/bootswatch/spacelab/variables";
+//noinspection CssUnknownTarget
+@import 'ember-cli-bootstrap3-variables.scss';
+//noinspection CssUnknownTarget
+@import 'ember-cli-bootstrap3-sass';
+@import "../../../../bower_components/bootswatch/spacelab/bootswatch";
+//noinspection CssUnknownTarget
+@import "ember-cli-font-awesome-sass";
+
+body {
+  padding-top: 50px;
+  margin-bottom: 50%;
+}
+
