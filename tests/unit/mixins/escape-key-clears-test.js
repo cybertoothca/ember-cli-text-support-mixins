@@ -10,5 +10,3 @@ test('check out the acceptance tests', function (assert) {
   let subject = EscapeKeyClearsObject.create();
   assert.ok(subject);
 });
-
-// TODO: test before and after hooks

@@ -1,6 +1,8 @@
 @import "../../../../bower_components/bootswatch/spacelab/variables";
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-variables.scss';
+
+$web-font-path: '' !default;
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-sass';
 @import "../../../../bower_components/bootswatch/spacelab/bootswatch";

@@ -33,7 +33,7 @@ export default Ember.Mixin.create({
     if (this.get('ctrlEnterSubmitsForm?') &&
       (event.ctrlKey && (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN))) {
       event.preventDefault();
-      const $form = this.$().closest('form');  // this.form does not work because component is wrapped
+      const $form = this.get('_form');
       if (Ember.isPresent($form)) {
         // fire the before-submit action
         if (Ember.isPresent(this.get('beforeSubmitAction'))) {
@@ -46,5 +46,13 @@ export default Ember.Mixin.create({
         }
       }
     }
-  }
+  },
+  /**
+   * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't
+   * seem to work with Ember wrapped TextSupport components?  Using a jQuery find of the closest form instead.
+   * This `this.$('input')[0].form` should actually work across all browsers.
+   */
+  _form: Ember.computed(function () {
+    return this.$().closest('form');
+  })
 });
