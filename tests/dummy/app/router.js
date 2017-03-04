@@ -1,4 +1,5 @@
 import Ember from 'ember';
+//noinspection JSFileReferences
 import config from './config/environment';
 
 const Router = Ember.Router.extend({
@@ -6,7 +7,13 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
+Router.map(function () {
+  this.route('acceptance', function () {
+    this.route('focus-selects-text');
+    this.route('autofocus-with-select-text');
+    this.route('autofocus-select-text-disabled');
+    this.route('escape-clears-text');
+  });
 });
 
 export default Router;

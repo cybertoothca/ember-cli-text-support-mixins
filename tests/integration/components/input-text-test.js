@@ -5,7 +5,7 @@ moduleForComponent('input-text', 'Integration | Component | input text', {
   integration: true
 });
 
-test('it renders', function (assert) {
+test('when rendered the .input-text is present', function (assert) {
   this.render(hbs`{{input-text}}`);
-  assert.equal(this.$().text().trim(), '');
+  assert.ok(this.$('input[type=text]').hasClass('input-text'));
 });

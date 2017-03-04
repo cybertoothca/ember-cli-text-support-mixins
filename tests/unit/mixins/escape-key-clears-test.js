@@ -5,8 +5,10 @@ import { module, test } from 'qunit';
 module('Unit | Mixin | escape key clears');
 
 // Replace this with your real tests.
-test('it works', function (assert) {
+test('check out the acceptance tests', function (assert) {
   let EscapeKeyClearsObject = Ember.Object.extend(EscapeKeyClearsMixin);
   let subject = EscapeKeyClearsObject.create();
   assert.ok(subject);
 });
+
+// TODO: test before and after hooks

@@ -5,7 +5,7 @@ import { module, test } from 'qunit';
 module('Unit | Mixin | focus selects text');
 
 // Replace this with your real tests.
-test('it works', function (assert) {
+test('check out the acceptance tests', function (assert) {
   let FocusSelectsTextObject = Ember.Object.extend(FocusSelectsTextMixin);
   let subject = FocusSelectsTextObject.create();
   assert.ok(subject);

@@ -5,7 +5,7 @@ import { module, test } from 'qunit';
 module('Unit | Mixin | trigger focus');
 
 // Replace this with your real tests.
-test('it works', function (assert) {
+test('check out the acceptance tests', function (assert) {
   let TriggerFocusObject = Ember.Object.extend(TriggerFocusMixin);
   let subject = TriggerFocusObject.create();
   assert.ok(subject);

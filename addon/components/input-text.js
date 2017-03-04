@@ -4,4 +4,6 @@ import EscapeKeyClears from '../mixins/escape-key-clears';
 import FocusSelectsText from '../mixins/focus-selects-text';
 import TriggerFocus from '../mixins/trigger-focus';
 
-export default Ember.TextField.extend(CtrlEnterSubmitsForm, EscapeKeyClears, FocusSelectsText, TriggerFocus, {});
+export default Ember.TextField.extend(CtrlEnterSubmitsForm, EscapeKeyClears, FocusSelectsText, TriggerFocus, {
+  classNames: ['input-text']
+});

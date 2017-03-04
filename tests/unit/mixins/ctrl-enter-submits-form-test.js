@@ -10,3 +10,5 @@ test('it works', function (assert) {
   let subject = CtrlEnterSubmitsFormObject.create();
   assert.ok(subject);
 });
+
+// TODO: test before and after hooks
