@@ -45,12 +45,33 @@
   <fieldset>
     <legend>Escape Press Clears</legend>
     <div class="form-group">
-      <label for="js-escape-key-clears" class="control-label"><kbd>Escape</kbd> Press Clears</label>
+      <label for="js-escape-key-clears" class="control-label">
+        <kbd>ESCAPE</kbd> Press Clears
+      </label>
       {{input-text class="form-control" id="js-escape-key-clears" placeholder="Escape Press Clears"
-                   value="Press the escape key to clear the text..."}}
-      <p class="help-block">
-
-      </p>
+                   value="Focus on this textbox and then press the escape key to clear the text..."}}
+      <div class="help-block">
+      <pre>\{{input-text class="form-control" id="js-escape-key-clears"
+      placeholder="..."
+      value="Focus on this textbox and then press the escape key to clear the text..."}}</pre>
+      </div>
     </div>
   </fieldset>
+  {{!--
+    <fieldset>
+      <legend>Ctrl+Enter (or Return) Submits Form</legend>
+      <form class="form" {{action (route-action "submit") on="submit"}}>
+        <div class="form-group">
+          <label for="js-ctrl-enter-submits" class="control-label">
+            <kbd>CTRL</kbd>+<kbd>ENTER</kbd> Submits Form
+          </label>
+          {{input-text class="form-control" id="js-ctrl-enter-submits"
+                       placeholder="Focus on this textbox and press CTRL+ENTER"}}
+          <div class="help-block">
+        <pre>\</pre>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+  --}}
 </section>
