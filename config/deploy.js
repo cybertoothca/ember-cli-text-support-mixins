@@ -4,7 +4,7 @@ module.exports = function(deployTarget) {
   var ENV = {
     build: {},
     s3: {
-      bucket: 'ember-cli-text-field-mixins.cybertooth.io',
+      bucket: 'ember-cli-text-support-mixins.cybertooth.io',
       filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,otf,html}',
       profile: 'cybertooth',
       region: 'us-west-2'

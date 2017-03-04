@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import TriggerFocusMixin from 'ember-cli-text-field-mixins/mixins/trigger-focus';
+import TriggerFocusMixin from 'ember-cli-text-support-mixins/mixins/trigger-focus';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | trigger focus');

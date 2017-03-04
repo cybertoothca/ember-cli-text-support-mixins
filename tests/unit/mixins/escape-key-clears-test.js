@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import EscapeKeyClearsMixin from 'ember-cli-text-field-mixins/mixins/escape-key-clears';
+import EscapeKeyClearsMixin from 'ember-cli-text-support-mixins/mixins/escape-key-clears';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | escape key clears');

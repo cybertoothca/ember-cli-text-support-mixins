@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import FocusSelectsTextMixin from 'ember-cli-text-field-mixins/mixins/focus-selects-text';
+import FocusSelectsTextMixin from 'ember-cli-text-support-mixins/mixins/focus-selects-text';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | focus selects text');

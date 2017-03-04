@@ -1,5 +1,5 @@
 {
-  "name": "ember-cli-text-field-mixins",
+  "name": "ember-cli-text-support-mixins",
   "dependencies": {
     "ember": "~2.9.0",
     "ember-cli-shims": "0.1.3",

@@ -1,6 +1,6 @@
 /*jshint node:true*/
 module.exports = {
-  name: 'ember-cli-text-field-mixins',
+  name: 'ember-cli-text-support-mixins',
   description: '',
   normalizeEntityName: function () {
   },

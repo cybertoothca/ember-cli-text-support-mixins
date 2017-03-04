@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import CtrlEnterSubmitsFormMixin from 'ember-cli-text-field-mixins/mixins/ctrl-enter-submits-form';
+import CtrlEnterSubmitsFormMixin from 'ember-cli-text-support-mixins/mixins/ctrl-enter-submits-form';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | ctrl enter submits form');

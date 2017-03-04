@@ -1,1 +1,1 @@
-export { default } from 'ember-cli-text-field-mixins/components/input-text';
+export { default } from 'ember-cli-text-support-mixins/components/input-text';

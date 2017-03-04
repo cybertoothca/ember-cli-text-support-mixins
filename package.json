@@ -1,7 +1,7 @@
 {
-  "name": "ember-cli-text-field-mixins",
+  "name": "ember-cli-text-support-mixins",
   "version": "1.0.0-alpha.3",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember.TextSupport enhancements including a {{input-text}} and {{text-area}} component.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cybertoothca/ember-cli-text-field-mixins.git"
+    "url": "https://github.com/cybertoothca/ember-cli-text-support-mixins.git"
   },
   "engines": {
     "node": ">= 0.12.0"
