@@ -4,8 +4,8 @@
   </div>
   <h2><code>\{{input-text}}</code></h2>
   <p>
-    By default, the <code>\{{input-text}}</code> will: clear its contents when the Escape key is pressed,
-    select any text when the input takes focus, and will <em>autofocus</em> will work across transitions and
+    By default, the <code>\{{input-text}}</code> will: clear its contents when the <kbd>ESCAPE</kbd> key is pressed,
+    select any text when the input takes focus, and will <em>autofocus</em> across transitions and
     re-rendering of the template.
   </p>
   <p>The following properties can be used to toggle the aforementioned behaviours.</p>
@@ -24,8 +24,8 @@
       {{input-text autofocus=true class="form-control" id="js-autofocus" escapeKeyClears?=false focusSelectsText?=false
                    placeholder="Autofocus Works Across Re-Renders" value="This textbox is focused..."}}
       <div class="help-block">
-      <pre>\{{input-text autofocus=true class="form-control" escapeKeyClears?=false
-      focusSelectsText?=false placeholder="..." value="..."}}</pre>
+        <pre>\{{input-text autofocus=true class="form-control" escapeKeyClears?=false
+        focusSelectsText?=false placeholder="..." value="..."}}</pre>
       </div>
     </div>
   </fieldset>
@@ -33,13 +33,16 @@
     <legend>Focus Selects Text</legend>
     <div class="form-group">
       <label for="js-focus-selects-text" class="control-label">Text Is Selected On Focus</label>
-      {{input-text class="form-control" escapeKeyClears?=false
+      {{input-text class="form-control" escapeKeyClears?=false id="js-focus-selects-text"
                    placeholder="Autofocus Works Across Re-Renders"
                    value="Tab to or click into textbox to focus and select"}}
       <div class="help-block">
-      <pre>\{{input-text class="form-control" escapeKeyClears?=false
-      placeholder="..." value="..."}}</pre>
+        <pre>\{{input-text class="form-control" escapeKeyClears?=false
+        placeholder="..." value="..."}}</pre>
       </div>
+    </div>
+    <div class="alert alert-info">
+      Remember that <code>focusSelectsText?</code> is true by default. Set it to false if you want to turn it off.
     </div>
   </fieldset>
   <fieldset>
@@ -51,27 +54,90 @@
       {{input-text class="form-control" id="js-escape-key-clears" placeholder="Escape Press Clears"
                    value="Focus on this textbox and then press the escape key to clear the text..."}}
       <div class="help-block">
-      <pre>\{{input-text class="form-control" id="js-escape-key-clears"
-      placeholder="..."
-      value="Focus on this textbox and then press the escape key to clear the text..."}}</pre>
+        <pre>\{{input-text class="form-control" id="js-escape-key-clears" placeholder="..."
+        value="Focus on this textbox and then press the escape key to clear the text..."}}</pre>
       </div>
     </div>
+    <div class="alert alert-info">
+      Remember that <code>escapeKeyClears?</code> is true by default. Set it to false if you want to turn it off.
+    </div>
   </fieldset>
-  {{!--
-    <fieldset>
-      <legend>Ctrl+Enter (or Return) Submits Form</legend>
-      <form class="form" {{action (route-action "submit") on="submit"}}>
-        <div class="form-group">
-          <label for="js-ctrl-enter-submits" class="control-label">
-            <kbd>CTRL</kbd>+<kbd>ENTER</kbd> Submits Form
-          </label>
-          {{input-text class="form-control" id="js-ctrl-enter-submits"
-                       placeholder="Focus on this textbox and press CTRL+ENTER"}}
-          <div class="help-block">
-        <pre>\</pre>
-          </div>
+</section>
+<section class="container">
+  <h2><code>\{{text-area}}</code></h2>
+  <p>
+    By default, the <code>\{{text-area}}</code> will: clear its contents when the <kbd>ESCAPE</kbd> key is pressed,
+    select any text when the textarea takes focus, and will <em>autofocus</em> across transitions and
+    re-rendering of the template. There is also an option to configure the textarea to submit its form
+    when <kbd>CTRL</kbd>+<kbd>ENTER</kbd> (or <kbd>CTRL</kbd>+<kbd>RETURN</kbd>) is pressed.
+  </p>
+  <p>The following properties can be used to toggle the aforementioned behaviours.</p>
+  <ul>
+    <li>
+      <code>escapeKeyClears?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+    </li>
+    <li>
+      <code>focusSelectsText?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+    </li>
+    <li>
+      <code>ctrlEnterSubmitsForm?</code> defaults to <code>false</code>, set to true if you want this behaviour.
+    </li>
+  </ul>
+</section>
+<section class="container">
+  <fieldset>
+    <legend>Focus Selects Text</legend>
+    <div class="form-group">
+      <label for="js-focus-selects-text-area" class="control-label">Text Is Selected On Focus</label>
+      {{text-area class="form-control" escapeKeyClears?=false id="js-focus-selects-text-area"
+                  placeholder="Autofocus Works Across Re-Renders"
+                  value="Tab to or click into textbox to focus and select"}}
+      <div class="help-block">
+        <pre>\{{text-area class="form-control" escapeKeyClears?=false
+        id="js-focus-selects-text-area" placeholder="..."
+        value="Tab to or click into textbox to focus and select"}}</pre>
+      </div>
+    </div>
+    <div class="alert alert-info">
+      Remember that <code>focusSelectsText?</code> is true by default. Set it to false if you want to turn it off.
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Escape Press Clears</legend>
+    <div class="form-group">
+      <label for="js-escape-key-clears-text-area" class="control-label">
+        <kbd>ESCAPE</kbd> Press Clears
+      </label>
+      {{text-area class="form-control" id="js-escape-key-clears-text-area"
+                  placeholder="Escape Press Clears"  focusSelectsText?=false
+                  value="Focus on this textbox and then press the escape key to clear the text..."}}
+      <div class="help-block">
+        <pre>\{{text-area class="form-control" id="js-escape-key-clears-text-area"
+        focusSelectsText?=false placeholder="..." value="..."}}</pre>
+      </div>
+    </div>
+    <div class="alert alert-info">
+      Remember that <code>escapeKeyClears?</code> is true by default. Set it to false if you want to turn it off.
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Ctrl+Enter (or Ctrl+Return) Submits Form</legend>
+    <form class="form" {{action (route-action "submit") on="submit"}}>
+      <div class="form-group">
+        <label for="js-ctrl-enter-submits" class="control-label">
+          <kbd>CTRL</kbd>+<kbd>ENTER</kbd> Submits Form
+        </label>
+        {{text-area class="form-control" id="js-ctrl-enter-submits" ctrlEnterSubmitsForm?=true
+                    placeholder="Focus on this textarea and press CTRL+ENTER"}}
+        <div class="help-block">
+          <pre>\{{text-area class="form-control" id="js-ctrl-enter-submits" ctrlEnterSubmitsForm?=true
+          placeholder="Focus on this textarea and press CTRL+ENTER"}}</pre>
         </div>
-      </form>
-    </fieldset>
-  --}}
+      </div>
+    </form>
+    <div class="alert alert-info">
+      Remember that <code>ctrlEnterSubmitsForm?</code> is <strong>false</strong> by default. Set it to true
+      if you want to turn it on.
+    </div>
+  </fieldset>
 </section>
