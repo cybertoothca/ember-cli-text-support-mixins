@@ -4,15 +4,28 @@
   </div>
   <h2><code>\{{input-text}}</code></h2>
   <p>
-    By default, the <code>\{{input-text}}</code> will: clear its contents when the <kbd>ESCAPE</kbd> key is pressed,
+    By default, the <code>\{{input-text}}</code> will: submit its form when <kbd>ENTER</kbd> is pressed,
+    clear its contents when the <kbd>ESCAPE</kbd> key is pressed,
     select any text when the input takes focus, and will <em>autofocus</em> across transitions and
-    re-rendering of the template.
+    re-rendering of the template when set to <code>autofocus=true</code>.
   </p>
   <p>The following properties can be used to toggle the aforementioned behaviours.</p>
   <ul>
-    <li><code>escapeKeyClears?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+    <li>
+      <code>ctrlEnterSubmitsForm?</code> defaults to <code>false</code>, set to <code>true</code> if you
+      don't want this behaviour.
     </li>
-    <li><code>focusSelectsText?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+    <li>
+      <code>enterSubmitsForm?</code> defaults to <code>true</code>, set to <code>false</code> if you
+      don't want this behaviour.
+    </li>
+    <li>
+      <code>escapeKeyClears?</code> defaults to <code>true</code>, set to <code>false</code> if you
+      don't want this behaviour.
+    </li>
+    <li>
+      <code>focusSelectsText?</code> defaults to <code>true</code>, set to <code>false</code> if you
+      don't want this behaviour.
     </li>
   </ul>
 </section>
@@ -27,6 +40,11 @@
         <pre>\{{input-text autofocus=true class="form-control" escapeKeyClears?=false
         focusSelectsText?=false placeholder="..." value="..."}}</pre>
       </div>
+    </div>
+    <div class="alert alert-info">
+      <code>autofocus</code> is an HTML5 attribute that Ember has a little trouble with such that it
+      won't seem to focus on template re-renders.  The `trigger-focus.js` mixin in the addon attempts to fix
+      that.
     </div>
   </fieldset>
   <fieldset>
@@ -103,7 +121,7 @@
           Remember that <code>enterWillSubmitForm?</code> is true by default. Set it to false if you want
           to avoid submitting the form when <kbd>ENTER</kbd> is pressed.
         </p>
-        <p>Also note, <code>ctrlEnterSubmitsForm?</code></p> defaults to false.  Set it to true if you
+        <p>Also note, <code>ctrlEnterSubmitsForm?</code></p> defaults to false. Set it to true if you
         want <kbd>CTRL</kbd>+<kbd>ENTER</kbd> to submit the form.
       </div>
     </form>
@@ -120,13 +138,16 @@
   <p>The following properties can be used to toggle the aforementioned behaviours.</p>
   <ul>
     <li>
-      <code>escapeKeyClears?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+      <code>ctrlEnterSubmitsForm?</code> defaults to <code>false</code>, set to <code>true</code> if you
+      want this behaviour.
     </li>
     <li>
-      <code>focusSelectsText?</code> defaults to <code>true</code>, set to false if you don't want this behaviour.
+      <code>escapeKeyClears?</code> defaults to <code>true</code>, set to <code>false</code> if you
+      don't want this behaviour.
     </li>
     <li>
-      <code>ctrlEnterSubmitsForm?</code> defaults to <code>false</code>, set to true if you want this behaviour.
+      <code>focusSelectsText?</code> defaults to <code>true</code>, set to <code>false</code> if you
+      don't want this behaviour.
     </li>
   </ul>
 </section>

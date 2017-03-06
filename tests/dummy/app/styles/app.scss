@@ -2,6 +2,7 @@
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-variables.scss';
 
+// HACK: this is being set to '' because phantomjs pukes on @import directives that go to google fonts
 $web-font-path: '' !default;
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-sass';
