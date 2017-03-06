@@ -5,8 +5,11 @@ export default Ember.Mixin.create({
   'enterWillSubmitForm?': true,
   keyDown(event) {
     this._super(...arguments);
-    if (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN) {
-      if (this.get('enterWillSubmitForm?')) {
+    if ((!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) &&
+      (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN)) {
+      const $form = this.get('_form');
+      if (Ember.isPresent($form) && this.get('enterWillSubmitForm?')) {
+        // TODO: trigger before and after?
         this.get('_form').trigger('submit');
         return true;
       } else {

@@ -36,13 +36,13 @@ test('when form is not submitted by pressing enter', function (assert) {
 test('when form cannot be found it does not ctrl+enter submit or invoke any before/after hooks', function (assert) {
   let wasCalled = false;
   let formSubmitted = false;
-  this.set('beforeSubmitAction', function (event, component, $form) {
+  this.set('beforeCtrlEnterSubmitAction', function (event, component, $form) {
     wasCalled = true;
     assert.ok(Ember.isPresent(event));
     assert.ok(Ember.isPresent(component));
     assert.ok(Ember.isPresent($form));
   });
-  this.render(hbs`{{input-text ctrlEnterSubmitsForm?=true beforeSubmitAction=beforeSubmitAction}}`);
+  this.render(hbs`{{input-text ctrlEnterSubmitsForm?=true beforeCtrlEnterSubmitAction=beforeCtrlEnterSubmitAction}}`);
 
   assert.notOk(wasCalled);
   assert.notOk(formSubmitted);
@@ -60,7 +60,7 @@ test('when form cannot be found it does not ctrl+enter submit or invoke any befo
 test('when hooking into the before ctrl-enter-submits-form hook', function (assert) {
   let wasCalled = false;
   let formSubmitted = false;
-  this.set('beforeSubmitAction', function (event, component, $form) {
+  this.set('beforeCtrlEnterSubmitAction', function (event, component, $form) {
     wasCalled = true;
     assert.ok(Ember.isPresent(event));
     assert.ok(Ember.isPresent(component));
@@ -71,7 +71,7 @@ test('when hooking into the before ctrl-enter-submits-form hook', function (asse
       formSubmitted = true;
     }
   }));
-  this.render(hbs`{{input-text ctrlEnterSubmitsForm?=true beforeSubmitAction=beforeSubmitAction _form=_form}}`);
+  this.render(hbs`{{input-text ctrlEnterSubmitsForm?=true beforeCtrlEnterSubmitAction=beforeCtrlEnterSubmitAction _form=_form}}`);
 
   assert.notOk(wasCalled);
   assert.notOk(formSubmitted);
@@ -89,7 +89,7 @@ test('when hooking into the before ctrl-enter-submits-form hook', function (asse
 test('when hooking into the after ctrl-enter-submits-form hook', function (assert) {
   let wasCalled = false;
   let formSubmitted = false;
-  this.set('afterSubmitAction', function (event, component, $form) {
+  this.set('afterCtrlEnterSubmitAction', function (event, component, $form) {
     wasCalled = true;
     assert.ok(Ember.isPresent(event));
     assert.ok(Ember.isPresent(component));
@@ -100,7 +100,7 @@ test('when hooking into the after ctrl-enter-submits-form hook', function (asser
       formSubmitted = true;
     }
   }));
-  this.render(hbs`{{input-text ctrlEnterSubmitsForm?=true afterSubmitAction=afterSubmitAction _form=_form}}`);
+  this.render(hbs`{{input-text ctrlEnterSubmitsForm?=true afterCtrlEnterSubmitAction=afterCtrlEnterSubmitAction _form=_form}}`);
 
   assert.notOk(wasCalled);
   assert.notOk(formSubmitted);

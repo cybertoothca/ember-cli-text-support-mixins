@@ -11,13 +11,13 @@ export default Ember.Mixin.create({
    * The function will receive three parameters: the first is the DOM event, the second is
    * `this` component, and the third is the jQuery wrapped `$form`.
    */
-  afterSubmitAction: undefined,
+  afterCtrlEnterSubmitAction: undefined,
   /**
    * Pass in a closure function to fire before the form submit is triggered.
    * The function will receive three parameters: the first is the DOM event, the second is
    * `this` component, and the third is the jQuery wrapped `$form`.
    */
-  beforeSubmitAction: undefined,
+  beforeCtrlEnterSubmitAction: undefined,
   /**
    * When set to `true`, CTRL+ENTER will attempt to submit the nearest form.  Set this to `false` if you do not
    * want this behaviour.  Default value is `false`.
@@ -36,13 +36,13 @@ export default Ember.Mixin.create({
       const $form = this.get('_form');
       if (Ember.isPresent($form)) {
         // fire the before-submit action
-        if (Ember.isPresent(this.get('beforeSubmitAction'))) {
-          this.get('beforeSubmitAction')(event, this, $form);
+        if (Ember.isPresent(this.get('beforeCtrlEnterSubmitAction'))) {
+          this.get('beforeCtrlEnterSubmitAction')(event, this, $form);
         }
         $form.trigger('submit');
         // fire the after-submit action
-        if (Ember.isPresent(this.get('afterSubmitAction'))) {
-          this.get('afterSubmitAction')(event, this, $form);
+        if (Ember.isPresent(this.get('afterCtrlEnterSubmitAction'))) {
+          this.get('afterCtrlEnterSubmitAction')(event, this, $form);
         }
       }
     }
