@@ -11,7 +11,7 @@ export default Ember.Mixin.create({
       const $form = this.get('_form');
       if (Ember.isPresent($form) && this.get('enterWillSubmitForm?')) {
         // TODO: trigger before and after?
-        this.get('_form').trigger('submit');
+        $form.trigger('submit');
       }
       return false;
     }
