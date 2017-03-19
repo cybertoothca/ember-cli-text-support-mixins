@@ -43,7 +43,7 @@
     </div>
     <div class="alert alert-info">
       <code>autofocus</code> is an HTML5 attribute that Ember has a little trouble with such that it
-      won't seem to focus on template re-renders.  The `trigger-focus.js` mixin in the addon attempts to fix
+      won't seem to focus on template re-renders. The `trigger-focus.js` mixin in the addon attempts to fix
       that.
     </div>
   </fieldset>
@@ -109,7 +109,8 @@
         <label for="js-enter-will-not-submit" class="control-label">
           <kbd>ENTER</kbd> & <kbd>CTRL</kbd>+<kbd>ENTER</kbd> Will NOT Submit
         </label>
-        {{input-text class="form-control" id="js-enter-will-not-submit" placeholder="Enter Submits"
+        {{input-text class="form-control" id="js-enter-will-not-submit"
+                     placeholder="Neither Enter Or Ctrl+Enter Will Submit"
                      enterWillSubmitForm?=false}}
         <div class="help-block">
         <pre>\{{input-text class="form-control" id="js-enter-will-not-submit" placeholder="Enter Submits"
@@ -123,6 +124,9 @@
         </p>
         <p>Also note, <code>ctrlEnterSubmitsForm?</code></p> defaults to false. Set it to true if you
         want <kbd>CTRL</kbd>+<kbd>ENTER</kbd> to submit the form.
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" type="submit">Submit Button Simulating A Typical Form</button>
       </div>
     </form>
   </fieldset>

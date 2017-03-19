@@ -30,22 +30,25 @@ export default Ember.Mixin.create({
    */
   keyDown(event) {
     this._super(...arguments);
-    if (this.get('ctrlEnterSubmitsForm?') &&
-      (event.ctrlKey && (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN))) {
+    if (event.ctrlKey && (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN)) {
       event.preventDefault();
-      const $form = this.get('_form');
-      if (Ember.isPresent($form)) {
-        // fire the before-submit action
-        if (Ember.isPresent(this.get('beforeCtrlEnterSubmitAction'))) {
-          this.get('beforeCtrlEnterSubmitAction')(event, this, $form);
-        }
-        $form.trigger('submit');
-        // fire the after-submit action
-        if (Ember.isPresent(this.get('afterCtrlEnterSubmitAction'))) {
-          this.get('afterCtrlEnterSubmitAction')(event, this, $form);
+      if (this.get('ctrlEnterSubmitsForm?')) {
+        const $form = this.get('_form');
+        if (Ember.isPresent($form)) {
+          // fire the before-submit action
+          if (Ember.isPresent(this.get('beforeCtrlEnterSubmitAction'))) {
+            this.get('beforeCtrlEnterSubmitAction')(event, this, $form);
+          }
+          $form.trigger('submit');
+          // fire the after-submit action
+          if (Ember.isPresent(this.get('afterCtrlEnterSubmitAction'))) {
+            this.get('afterCtrlEnterSubmitAction')(event, this, $form);
+          }
         }
       }
+      return false;
     }
+    return true;
   },
   /**
    * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't

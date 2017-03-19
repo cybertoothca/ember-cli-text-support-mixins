@@ -7,14 +7,13 @@ export default Ember.Mixin.create({
     this._super(...arguments);
     if ((!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) &&
       (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN)) {
+      event.preventDefault();
       const $form = this.get('_form');
       if (Ember.isPresent($form) && this.get('enterWillSubmitForm?')) {
         // TODO: trigger before and after?
         this.get('_form').trigger('submit');
-        return true;
-      } else {
-        return false;
       }
+      return false;
     }
     return true;
   },
