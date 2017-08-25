@@ -1,8 +1,18 @@
 # ember-cli-text-support-mixins [![GitHub version](http://badge.fury.io/gh/cybertoothca%2Fember-cli-text-field-mixins.svg)](http://badge.fury.io/gh/cybertoothca%2Fember-cli-text-field-mixins) ![](https://embadge.io/v1/badge.svg?start=1.13.0)
 
-[![npm version](http://badge.fury.io/js/ember-cli-text-support-mixins.svg)](http://badge.fury.io/js/ember-cli-text-support-mixins) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-text-support-mixins.svg) [![ember-observer-badge](http://emberobserver.com/badges/ember-cli-text-support-mixins.svg)](http://emberobserver.com/addons/ember-cli-text-support-mixins) [![License](http://img.shields.io/npm/l/ember-cli-text-support-mixins.svg)](LICENSE.md)
+[![npm version](http://badge.fury.io/js/ember-cli-text-support-mixins.svg)](http://badge.fury.io/js/ember-cli-text-support-mixins) ![downloads](https://img.shields.io/npm/dy/ember-cli-text-support-mixins.svg) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-text-support-mixins.svg) [![ember-observer-badge](http://emberobserver.com/badges/ember-cli-text-support-mixins.svg)](http://emberobserver.com/addons/ember-cli-text-support-mixins) [![License](http://img.shields.io/npm/l/ember-cli-text-support-mixins.svg)](LICENSE.md)
 
 Ember.TextSupport enhancements including a `{{input-text}}` and `{{text-area}}` component.
+
+## Tested Against
+
+[![ember-lts-2.4](https://img.shields.io/badge/ember--try-ember--lts--2.4-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+[![ember-lts-2.8](https://img.shields.io/badge/ember--try-ember--lts--2.8-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+[![ember-lts-2.12](https://img.shields.io/badge/ember--try-ember--lts--2.12-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+
+[![ember-release](https://img.shields.io/badge/ember--try-ember--release-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+[![ember-beta](https://img.shields.io/badge/ember--try-ember--beta-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+[![ember-canary](https://img.shields.io/badge/ember--try-ember--canary-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
 
 ## Demo
 
@@ -49,7 +59,9 @@ The following Bower dependencies are automatically installed into your Ember pro
 
 The following command will install this addon:
 
-    $ ember install ember-cli-text-support-mixins
+```
+ember install ember-cli-text-support-mixins
+```
 
 ### Upgrading
 
@@ -90,8 +102,9 @@ to invoke any type of behaviour prior to CTRL+ENTER submitting the form.
 
 #### Examples
 
+```
     {{input-text value=model.someField}}
-    
+```
 
 ([Check out the demo...](http://ember-cli-text-support-mixins.cybertooth.io/))
 
@@ -117,7 +130,9 @@ to invoke any type of behaviour prior to CTRL+ENTER submitting the form.
 
 #### Examples
 
-    {{text-area value=model.someOtherField}}
+```
+{{text-area value=model.someOtherField}}
+```
 
 ([Check out the demo...](http://ember-cli-text-support-mixins.cybertooth.io/))
 
@@ -129,7 +144,9 @@ to invoke any type of behaviour prior to CTRL+ENTER submitting the form.
 
 Include in your component's js:
 
-    import CtrlEnterSubmitsForm from 'ember-cli-text-support-mixins/mixins/ctrl-enter-submits-form';
+```
+import CtrlEnterSubmitsForm from 'ember-cli-text-support-mixins/mixins/ctrl-enter-submits-form';
+```
 
 #### `enter-submits-form.js`
 
@@ -137,7 +154,9 @@ Pressing `ENTER` in a text input will try to submit the nearest form element.
 
 Include in your component's js:
 
-    import EnterSubmitsForm from 'ember-cli-text-support-mixins/mixins/enter-submits-form';
+```
+import EnterSubmitsForm from 'ember-cli-text-support-mixins/mixins/enter-submits-form';
+```
 
 #### `escape-key-clears.js`
  
@@ -145,7 +164,9 @@ Pressing the `ESCAPE` key while focused in a text input or textarea will clear a
 
 Include in your component's js:
 
-    import EscapeKeyClears from 'ember-cli-text-support-mixins/mixins/escape-key-clears';
+```
+import EscapeKeyClears from 'ember-cli-text-support-mixins/mixins/escape-key-clears';
+```
 
 #### `focus-selects-text.js`
 
@@ -153,7 +174,9 @@ Selects the text components text when focus is placed into the input.
 
 Include in your component's js:
 
-    import FocusSelectsText from 'ember-cli-text-support-mixins/mixins/focus-selects-text';
+```
+import FocusSelectsText from 'ember-cli-text-support-mixins/mixins/focus-selects-text';
+```
 
 #### `trigger-focus.js`
 
@@ -161,7 +184,9 @@ Fixes the quirk in Ember where html5 `autofocus` does not work after template re
 
 Include in your component's js:
 
-    import TriggerFocus from 'ember-cli-text-support-mixins/mixins/trigger-focus';
+```
+import TriggerFocus from 'ember-cli-text-support-mixins/mixins/trigger-focus';
+```
 
 ### Troubleshooting And Tips
 
@@ -173,9 +198,23 @@ _None...at least that I can think of._
 
 ## Setup
 
-* `git clone git@github.com:cybertoothca/ember-cli-text-support-mixins.git`
-* `npm install`
-* `bower install`
+### Checkout
+
+```
+git clone git@github.com:cybertoothca/ember-cli-text-support-mixins.git
+```
+
+### With NPM
+
+```
+npm install
+```
+
+### With Yarn
+
+```
+yarn
+```
 
 ## Running The Dummy Application
 
@@ -225,10 +264,21 @@ in your _other_ project's `package.json`.
 Make sure your `~/.aws/credentials` file has a profile named _cybertooth_ 
 with a valid key and secret,
 
-    [cybertooth]
-    aws_access_key_id = <KEY>
-    aws_secret_access_key = <SECRET>
+```
+[cybertooth]
+aws_access_key_id = <KEY>
+aws_secret_access_key = <SECRET>
+```
 
 Deploy by invoking the following command: `ember deploy production`
 
 Confirm your changes are showing up in our S3 container: http://ember-cli-text-support-mixins.cybertooth.io/
+
+# Releasing & Publishing To NPM
+
+```
+npm version x.y.z-sub.#
+git push
+git push --tags
+npm publish
+```

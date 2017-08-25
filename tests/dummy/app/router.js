@@ -1,5 +1,4 @@
 import Ember from 'ember';
-//noinspection JSFileReferences
 import config from './config/environment';
 
 const Router = Ember.Router.extend({

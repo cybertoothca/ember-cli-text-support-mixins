@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{#link-to "index" classNames="navbar-brand"}}
+      {{#link-to "index" class="navbar-brand"}}
         ember-cli-text-support-mixins
       {{/link-to}}
     </div>
@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="https://cybertoothca.github.io/ember-cli-text-support-mixins/">
+          <a href="https://cybertoothca.github.io/ember-cli-text-support-mixins/" target="_blank">
             <i class="fa fa-book"></i>
             Docs
           </a>
@@ -34,8 +34,7 @@
           </a>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-             aria-expanded="false">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             Other Projects <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
@@ -44,37 +43,38 @@
                 ember-cli-bootstrap3-carousel
               </a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="http://ember-cli-bootstrap3-popover.cybertooth.io/" target="_blank">
                 ember-cli-bootstrap3-popover
               </a>
             </li>
-            <li role="separator" class="divider"></li>
+            {{!--
+                        <li>
+                          <a href="http://ember-cli-bootstrap3-tooltip.cybertooth.io/" target="_blank">
+                            ember-cli-bootstrap3-tooltip
+                          </a>
+                        </li>
+            --}}
             <li>
               <a href="http://ember-cli-date-textbox.cybertooth.io/" target="_blank">
                 ember-cli-date-textbox
               </a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="http://ember-cli-marked-down.cybertooth.io/" target="_blank">
                 ember-cli-marked-down
               </a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="http://ember-cli-text-support-mixins.cybertooth.io/" target="_blank">
                 ember-cli-text-support-mixins
               </a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="http://ember-cli-textarea-autosize.cybertooth.io/" target="_blank">
                 ember-cli-textarea-autosize
               </a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="http://ember-data-bootstrap3-forms.cybertooth.io/" target="_blank">
                 ember-data-bootstrap3-forms
@@ -86,5 +86,16 @@
     </div>
   </div>
 </nav>
+
+<section class="container">
+  <div class="page-header">
+    <h1>
+      Demo
+      <img src="http://badge.fury.io/gh/cybertoothca%2Fember-cli-text-support-mixins.svg"
+           alt="ember-cli-text-support-mixins version">
+      <img src="https://badge.fury.io/js/ember-cli-text-support-mixins.svg" alt="ember-cli-text-support-mixins npm"/>
+    </h1>
+  </div>
+</section>
 
 {{outlet}}
