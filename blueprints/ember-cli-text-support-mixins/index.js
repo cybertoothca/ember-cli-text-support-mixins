@@ -5,7 +5,6 @@ module.exports = {
   normalizeEntityName: function () {
   },
   afterInstall: function (/*options*/) {
-    return this.addBowerPackagesToProject([{name: 'keyevent'}]);
+    return this.addPackagesToProject([{name: 'keyevent'}]);
   }
-
 };
