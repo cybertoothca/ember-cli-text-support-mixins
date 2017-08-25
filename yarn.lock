@@ -2303,13 +2303,6 @@ ember-cli-node-assets@^0.2.2:
     lodash "^4.5.1"
     resolve "^1.1.7"
 
-ember-cli-node-modules-to-vendor@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/ember-cli-node-modules-to-vendor/-/ember-cli-node-modules-to-vendor-0.2.2.tgz#ebb81ff222dde3546bab3887c4847fc906c2f207"
-  dependencies:
-    broccoli-merge-trees "^2.0.0"
-    broccoli-source "^1.1.0"
-
 ember-cli-normalize-entity-name@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-normalize-entity-name/-/ember-cli-normalize-entity-name-1.0.0.tgz#0b14f7bcbc599aa117b5fddc81e4fd03c4bad5b7"
@@ -4034,9 +4027,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-keyevent@^1.1.0-rc.1:
-  version "1.1.0-rc.1"
-  resolved "https://registry.yarnpkg.com/keyevent/-/keyevent-1.1.0-rc.1.tgz#8e392ae0ffc199366ec723a991802d75e1ea8aa8"
+keyevent@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/keyevent/-/keyevent-1.1.0.tgz#9c0e0118a22fd83d4d23f6713a10701391ca6060"
 
 kind-of@^3.0.2:
   version "3.2.2"

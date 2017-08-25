@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^6.3.0",
-    "keyevent": "^1.1.0-rc.1"
+    "keyevent": "^1.1.0"
   },
   "devDependencies": {
     "bootswatch": "^3.3.7",
