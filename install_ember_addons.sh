@@ -11,4 +11,4 @@ ember install ember-route-action-helper
 ember install ember-cli-node-modules-to-vendor
 
 npm install --save-dev bootswatch@3.3
-npm install --save-dev keyevent
+npm install --save keyevent
