@@ -9,7 +9,7 @@ module.exports = function (defaults) {
       keyevent: {
         vendor: {
           srcDir: 'src',
-          destDir: 'keyevent',
+          destDir: 'ember-cli-text-support-mixins',
           include: ['keyevent.js']
         }
       }
@@ -22,7 +22,7 @@ module.exports = function (defaults) {
     This build file does *not* influence how the addon or the app using it
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
-  app.import('vendor/keyevent/keyevent.js');
+  app.import('vendor/ember-cli-text-support-mixins/keyevent.js');
 
   return app.toTree();
 };

@@ -8,7 +8,7 @@ module.exports = {
       keyevent: {
         vendor: {
           srcDir: 'src',
-          destDir: 'keyevent',
+          destDir: 'ember-cli-text-support-mixins',
           include: ['keyevent.js']
         }
       }
@@ -16,6 +16,6 @@ module.exports = {
   },
   included: function (app) {
     this._super.included.apply(this, arguments);
-    app.import('vendor/keyevent/keyevent.js');
+    app.import('vendor/ember-cli-text-support-mixins/keyevent.js');
   }
 };
