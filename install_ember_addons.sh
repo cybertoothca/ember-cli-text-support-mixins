@@ -8,7 +8,7 @@ ember install ember-cli-deploy-s3
 ember install ember-cli-font-awesome-sass
 ember install ember-cli-font-awesome-sass
 ember install ember-route-action-helper
-ember install ember-cli-node-modules-to-vendor
+ember install ember-cli-node-assets
 
 npm install --save-dev bootswatch@3.3
 npm install --save keyevent
