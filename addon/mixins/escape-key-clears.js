@@ -32,6 +32,7 @@ export default Ember.Mixin.create({
         this.get('beforeClearAction')(event, this);
       }
       this.set('value', '');
+      this.$().val('');
       // fire the after-clear action
       if (Ember.isPresent(this.get('afterClearAction'))) {
         this.get('afterClearAction')(event, this);
