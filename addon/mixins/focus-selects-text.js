@@ -10,7 +10,11 @@ export default Ember.Mixin.create({
   focusIn(/*event*/) {
     this._super(...arguments);
     if (this.get('focusSelectsText?') && this.$().is(':text, textarea')) {
-      this.$().trigger('select');
+      // using a runloop to make sure textarea text can be selected in webkit/safari
+      // @see https://stackoverflow.com/a/6201757/545137
+      Ember.run.later(this, () => {
+        this.$().trigger('select');
+      }, 1);
     }
   },
   /**
