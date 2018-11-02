@@ -10,5 +10,5 @@ ember install ember-cli-font-awesome-sass
 ember install ember-route-action-helper
 
 yarn add ember-cli-node-assets
-yarn add keyevent
+yarn add keyevent --dev
 yarn add bootswatch@3.3.7 --dev
