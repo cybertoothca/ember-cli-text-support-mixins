@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { on } from '@ember/object/evented';
+import Mixin from '@ember/object/mixin';
 
 /**
  * This ensures that focus is placed into an input or textarea should the autofocus property exist.
@@ -8,7 +9,7 @@ import Ember from 'ember';
  *
  * This mixin assumes that it is being assigned to a component that will respond to the `focus` event.
  */
-export default Ember.Mixin.create({
+export default Mixin.create({
   /**
    * @default autofocus is set to false.
    */
@@ -17,7 +18,7 @@ export default Ember.Mixin.create({
   /**
    * When the element is inserted, trigger the focus event.
    */
-  _triggerFocus: Ember.on('didInsertElement', function () {
+  _triggerFocus: on('didInsertElement', function () {
     if (this.get('autofocus')) {
       this.get('element').focus();
     }

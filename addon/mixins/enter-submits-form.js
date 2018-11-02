@@ -1,7 +1,10 @@
 /* global KeyEvent */
-import Ember from 'ember';
+import { computed } from '@ember/object';
 
-export default Ember.Mixin.create({
+import { isPresent } from '@ember/utils';
+import Mixin from '@ember/object/mixin';
+
+export default Mixin.create({
 
   'enterWillSubmitForm?': true,
 
@@ -11,7 +14,7 @@ export default Ember.Mixin.create({
       (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN)) {
       event.preventDefault();
       const form = this.get('_form');
-      if (this.get('enterWillSubmitForm?') && Ember.isPresent(form) && Ember.isPresent(form.onsubmit)) {
+      if (this.get('enterWillSubmitForm?') && isPresent(form) && isPresent(form.onsubmit)) {
         // TODO: trigger before and after?
         form.onsubmit();
       }
@@ -26,7 +29,7 @@ export default Ember.Mixin.create({
    * the closest form instead.
    * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
    */
-  _form: Ember.computed('element', function () {
+  _form: computed('element', function () {
     return this.get('element').closest('form');
   })
 });
