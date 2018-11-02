@@ -4,11 +4,30 @@
 
 Ember.TextSupport enhancements including a `{{input-text}}` and `{{text-area}}` component.
 
-## Ember Versions
+## Requirements
 
-Use `**ember-cli-text-support-mixins@1.1.2**` for Ember applications 2.8 or less.
+* Ember >= 1.13.0
+* Ember CLI
 
-For Ember applications 2.9 and greater use `**ember-cli-text-support-mixins@2.x**` 
+## Installation
+
+### Ember-2.9 and later
+
+```
+ember install ember-cli-text-support-mixins
+```
+
+### Ember-1.13 -> Ember-2.8
+
+```
+ember install ember-cli-text-support-mixins@1.1.2
+```
+
+### Upgrading
+
+When working through the Ember upgrade process, I recommend
+invoking the `ember install ember-cli-text-support-mixins` command once
+you are done to get the latest version of the addon.
 
 ## Tested Against
 
@@ -48,34 +67,13 @@ Also available are the following _mixins_.  You can incorporate their behaviours
 _Further information about these items can be found in the Usage section below and in the 
 [demo (dummy) application](http://ember-cli-text-support-mixins.cybertooth.io/)._
 
-## Requirements
-
-* Ember >= 1.13.0
-* Ember CLI
-
 ### Dependencies
 
-#### Bower
+#### From NPM
 
-The following Bower dependencies are automatically installed into your Ember product:
+The following NPM dependency is automatically installed into your Ember product:
 
 * `keyevent` - https://github.com/cybertoothca/keyevent - 
-
-## Installation
-
-The following command will install this addon:
-
-```
-ember install ember-cli-text-support-mixins
-```
-
-### Upgrading
-
-When working through the Ember upgrade process, I recommend
-invoking the `ember install ember-cli-text-support-mixins` command once
-you are done to get the latest version of the addon.
-
-This will likely update the dependencies listed above.
 
 ## Usage
 
