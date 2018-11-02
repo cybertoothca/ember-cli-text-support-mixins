@@ -13,12 +13,13 @@ export default Ember.Mixin.create({
    * @default autofocus is set to false.
    */
   autofocus: false,
+
   /**
-   * When the element is inserted, trigger the focus event using jQuery.
+   * When the element is inserted, trigger the focus event.
    */
   _triggerFocus: Ember.on('didInsertElement', function () {
     if (this.get('autofocus')) {
-      this.$().trigger('focus');
+      this.get('element').focus();
     }
   })
 });

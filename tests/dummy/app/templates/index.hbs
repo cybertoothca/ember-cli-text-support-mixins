@@ -83,7 +83,7 @@
     </fieldset>
     <fieldset>
       <legend>Will Not Submit</legend>
-      <form class="form" {{action (route-action "submit") on="submit"}}>
+      <form class="form" onsubmit={{action (route-action "submit")}}>
         <div class="form-group">
           <label for="js-enter-will-submit" class="control-label">
             <kbd>ENTER</kbd> Submits
@@ -125,9 +125,6 @@
           </p>
           <p>Also note, <code>ctrlEnterSubmitsForm?</code></p> defaults to false. Set it to true if you
           want <kbd>CTRL</kbd>+<kbd>ENTER</kbd> to submit the form.
-        </div>
-        <div class="form-group">
-          <button class="btn btn-default" type="submit">Submit Button Simulating A Typical Form</button>
         </div>
       </form>
     </fieldset>
@@ -229,7 +226,7 @@
     </fieldset>
     <fieldset>
       <legend>Ctrl+Enter (or Ctrl+Return) Submits Form</legend>
-      <form class="form" {{action (route-action "submit") on="submit"}}>
+      <form class="form" onsubmit={{action (route-action "submit")}}>
         <div class="form-group">
           <label for="js-ctrl-enter-submits" class="control-label">
             <kbd>CTRL</kbd>+<kbd>ENTER</kbd> Submits Form

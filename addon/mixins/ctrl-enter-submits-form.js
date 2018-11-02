@@ -33,16 +33,16 @@ export default Ember.Mixin.create({
     if (event.ctrlKey && (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN)) {
       event.preventDefault();
       if (this.get('ctrlEnterSubmitsForm?')) {
-        const $form = this.get('_form');
-        if (Ember.isPresent($form)) {
+        const form = this.get('_form');
+        if (Ember.isPresent(form) && Ember.isPresent(form.onsubmit)) {
           // fire the before-submit action
           if (Ember.isPresent(this.get('beforeCtrlEnterSubmitAction'))) {
-            this.get('beforeCtrlEnterSubmitAction')(event, this, $form);
+            this.get('beforeCtrlEnterSubmitAction')(event, this, form);
           }
-          $form.trigger('submit');
+          form.onsubmit();
           // fire the after-submit action
           if (Ember.isPresent(this.get('afterCtrlEnterSubmitAction'))) {
-            this.get('afterCtrlEnterSubmitAction')(event, this, $form);
+            this.get('afterCtrlEnterSubmitAction')(event, this, form);
           }
         }
       }
@@ -50,11 +50,14 @@ export default Ember.Mixin.create({
     }
     return true;
   },
+
   /**
    * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't
-   * seem to work with Ember wrapped TextSupport components?  Using a jQuery find of the closest form instead.
+   * seem to work with Ember wrapped TextSupport components?  Using `closest('form')` to find of
+   * the closest form instead.
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
    */
-  _form: Ember.computed(function () {
-    return this.$().closest('form');
+  _form: Ember.computed('element', function () {
+    return this.get('element').closest('form');
   })
 });

@@ -16,7 +16,7 @@ test('when rendered the .input-text class is present', function (assert) {
 test('when form is not submitted by pressing enter', function (assert) {
   let formSubmitted = false;
   this.set('_form', Ember.Object.create({
-    trigger() {
+    onsubmit() {
       formSubmitted = true;
     }
   }));
@@ -67,7 +67,7 @@ test('when hooking into the before ctrl-enter-submits-form hook', function (asse
     assert.ok(Ember.isPresent($form));
   });
   this.set('_form', Ember.Object.create({
-    trigger() {
+    onsubmit() {
       formSubmitted = true;
     }
   }));
@@ -96,7 +96,7 @@ test('when hooking into the after ctrl-enter-submits-form hook', function (asser
     assert.ok(Ember.isPresent($form));
   });
   this.set('_form', Ember.Object.create({
-    trigger() {
+    onsubmit() {
       formSubmitted = true;
     }
   }));
