@@ -29,7 +29,7 @@ export default Mixin.create({
    * the closest form instead.
    * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
    */
-  _form: computed(function () {
+  _form: computed('element', function () {
     return this.get('element').closest('form');
   })
 });
