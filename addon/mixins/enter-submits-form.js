@@ -1,10 +1,9 @@
 /* global KeyEvent */
-import { computed } from '@ember/object';
-
 import { isPresent } from '@ember/utils';
 import Mixin from '@ember/object/mixin';
+import ClosestFormMixin from './closest-form';
 
-export default Mixin.create({
+export default Mixin.create(ClosestFormMixin, {
   'enterWillSubmitForm?': true,
 
   keyDown(event) {
@@ -15,19 +14,10 @@ export default Mixin.create({
       const form = this.get('_form');
       if (isPresent(form) && this.get('enterWillSubmitForm?')) {
         // TODO: trigger before and after?
-        // $form.trigger('submit');
         form.onsubmit();
       }
       return false;
     }
     return true;
-  },
-
-  /**
-   * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't
-   * seem to work with Ember wrapped TextSupport components?  Using a jQuery find of the closest form instead.
-   */
-  _form: computed(function () {
-    return this.element.closest('form');
-  })
+  }
 });
