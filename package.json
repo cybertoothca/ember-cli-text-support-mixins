@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
+    "ember-cli-node-assets": "^0.2.2",
     "keyevent": "^1.1.0"
   },
   "devDependencies": {
@@ -57,7 +58,6 @@
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
-    "ember-cli-node-assets": "^0.2.2",
     "ember-cli-qunit": "^4.1.1",
     "ember-cli-sass": "^8.0.1",
     "ember-cli-shims": "^1.2.0",
