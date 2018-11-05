@@ -1,11 +1,14 @@
 /* global KeyEvent */
-import Ember from 'ember';
+import { computed } from '@ember/object';
+
+import { isPresent } from '@ember/utils';
+import Mixin from '@ember/object/mixin';
 
 /**
  * When the CTRL+ENTER is pressed the nearest form up the dom is triggered for submit.  By default this behaviour
  * is not activated.  See `ctrlEnterSubmitsForm?` for more information.
  */
-export default Ember.Mixin.create({
+export default Mixin.create({
   /**
    * Pass in a closure function to fire after the form submit is triggered.
    * The function will receive three parameters: the first is the DOM event, the second is
@@ -34,14 +37,14 @@ export default Ember.Mixin.create({
       event.preventDefault();
       if (this.get('ctrlEnterSubmitsForm?')) {
         const $form = this.get('_form');
-        if (Ember.isPresent($form)) {
+        if (isPresent($form)) {
           // fire the before-submit action
-          if (Ember.isPresent(this.get('beforeCtrlEnterSubmitAction'))) {
+          if (isPresent(this.get('beforeCtrlEnterSubmitAction'))) {
             this.get('beforeCtrlEnterSubmitAction')(event, this, $form);
           }
           $form.trigger('submit');
           // fire the after-submit action
-          if (Ember.isPresent(this.get('afterCtrlEnterSubmitAction'))) {
+          if (isPresent(this.get('afterCtrlEnterSubmitAction'))) {
             this.get('afterCtrlEnterSubmitAction')(event, this, $form);
           }
         }
@@ -54,7 +57,7 @@ export default Ember.Mixin.create({
    * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't
    * seem to work with Ember wrapped TextSupport components?  Using a jQuery find of the closest form instead.
    */
-  _form: Ember.computed(function () {
+  _form: computed(function () {
     return this.$().closest('form');
   })
 });

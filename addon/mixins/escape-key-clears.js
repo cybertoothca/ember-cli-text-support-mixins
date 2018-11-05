@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import { isPresent } from '@ember/utils';
+import Mixin from '@ember/object/mixin';
 
 /**
  * When the escape key is pressed, the `value` proper will be cleared.
  */
-export default Ember.Mixin.create({
+export default Mixin.create({
   /**
    * Pass in a closure function to fire after the value is cleared.
    * The function will receive two parameters: the first is the DOM event, and the second is
@@ -28,13 +29,13 @@ export default Ember.Mixin.create({
     this._super(...arguments);
     if (this.get('escapeKeyClears?')) {
       // fire the before-clear action
-      if (Ember.isPresent(this.get('beforeClearAction'))) {
+      if (isPresent(this.get('beforeClearAction'))) {
         this.get('beforeClearAction')(event, this);
       }
       this.set('value', '');
       this.$().val('');
       // fire the after-clear action
-      if (Ember.isPresent(this.get('afterClearAction'))) {
+      if (isPresent(this.get('afterClearAction'))) {
         this.get('afterClearAction')(event, this);
       }
     }
