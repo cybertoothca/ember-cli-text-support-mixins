@@ -21,7 +21,6 @@ export default Mixin.create({
    */
   _triggerFocus: on('didInsertElement', function () {
     if (this.get('autofocus')) {
-      // this.$().trigger('focus');
       this.element.focus();
     }
   })

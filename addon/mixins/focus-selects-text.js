@@ -15,7 +15,6 @@ export default Mixin.create({
       // using a runloop to make sure textarea text can be selected in webkit/safari
       // @see https://stackoverflow.com/a/6201757/545137
       later(this, () => {
-        // this.$().trigger('select');
         this.element.select();
       }, 1);
     }
