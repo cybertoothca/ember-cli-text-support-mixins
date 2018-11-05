@@ -10,16 +10,19 @@ import Mixin from '@ember/object/mixin';
  * This mixin assumes that it is being assigned to a component that will respond to the `focus` event.
  */
 export default Mixin.create({
+
   /**
    * @default autofocus is set to false.
    */
   autofocus: false,
+
   /**
    * When the element is inserted, trigger the focus event using jQuery.
    */
   _triggerFocus: on('didInsertElement', function () {
     if (this.get('autofocus')) {
-      this.$().trigger('focus');
+      // this.$().trigger('focus');
+      this.element.focus();
     }
   })
 });
