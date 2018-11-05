@@ -42,6 +42,13 @@ This add-on does not depend on bower libraries when installed in your applicatio
 
 This add-on no longer depends on JQuery.  
 
+### Dependencies
+
+#### `keyevent`
+
+The constants from [`keyevent`](https://github.com/cybertoothca/keyevent) are installed 
+by yarn and `ember-cli-node-assets`.
+
 ## Demo
 
 The demonstration web application can be found here:
@@ -69,19 +76,6 @@ Also available are the following _mixins_.  You can incorporate their behaviours
 
 _Further information about these items can be found in the Usage section below and in the 
 [demo (dummy) application](http://ember-cli-text-support-mixins.cybertooth.io/)._
-
-## Requirements
-
-* Ember >= 1.13.0
-* Ember CLI
-
-### Dependencies
-
-#### Bower
-
-The following Bower dependencies are automatically installed into your Ember product:
-
-* `keyevent` - https://github.com/cybertoothca/keyevent - 
 
 ## Usage
 
