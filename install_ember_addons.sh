@@ -12,4 +12,4 @@ ember install ember-cli-node-assets
 
 yarn add bootswatch@3.3 --dev
 yarn add keyevent --dev
-yarn add ember-cli-node-assets  # TODO: this must go into "dependencies" NOT "devDependencies"
+yarn add ember-cli-node-assets  # this must go into "dependencies" NOT "devDependencies"
