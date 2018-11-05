@@ -4,24 +4,59 @@
 
 Ember.TextSupport enhancements including a `{{input-text}}` and `{{text-area}}` component.
 
+## Built With
+
+[![ember-cli-2.18.2](https://img.shields.io/badge/ember--cli-2.18.2-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+
 ## Tested Against
 
 [![ember-lts-2.4](https://img.shields.io/badge/ember--try-ember--lts--2.4-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
 [![ember-lts-2.8](https://img.shields.io/badge/ember--try-ember--lts--2.8-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
 [![ember-lts-2.12](https://img.shields.io/badge/ember--try-ember--lts--2.12-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+[![ember-lts-2.16](https://img.shields.io/badge/ember--try-ember--lts--2.16-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
 
-[![ember-release](https://img.shields.io/badge/ember--try-ember--release-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+[![ember-release-2.18](https://img.shields.io/badge/ember--try-ember--release--2.18-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+[![ember-default](https://img.shields.io/badge/ember--try-ember--default-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
 [![ember-beta](https://img.shields.io/badge/ember--try-ember--beta-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
 [![ember-canary](https://img.shields.io/badge/ember--try-ember--canary-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
+
+## Installation
+
+The following command will install this add-on:
+
+```
+ember install ember-cli-text-support-mixins
+```
+
+### Upgrading
+
+When working through the Ember upgrade process, I recommend
+invoking the `ember install ember-cli-text-support-mixins` command once
+you are done to get the latest version of the add-on.
+
+This will likely update the dependencies listed above.
+
+### Bower & JQuery
+
+This add-on does not depend on bower libraries when installed in your application or add-on.
+
+This add-on no longer depends on JQuery.  
+
+### Dependencies
+
+#### `keyevent`
+
+The constants from [`keyevent`](https://github.com/cybertoothca/keyevent) are installed 
+by yarn and `ember-cli-node-assets`.
 
 ## Demo
 
 The demonstration web application can be found here:
 [http://ember-cli-text-support-mixins.cybertooth.io/](http://ember-cli-text-support-mixins.cybertooth.io/). 
 
-## What Does This Addon Do?
+## What Does This Add-on Do?
 
-This addon supplies the following _components_:
+This add-on supplies the following _components_:
 
 * `input-text` - a simple extension of the Ember text component that includes the following mixins: 
 `ctrl-enter-submits-form.js` (**disabled** by default), `enter-submits-form.js` (**enabled** by default), 
@@ -41,35 +76,6 @@ Also available are the following _mixins_.  You can incorporate their behaviours
 
 _Further information about these items can be found in the Usage section below and in the 
 [demo (dummy) application](http://ember-cli-text-support-mixins.cybertooth.io/)._
-
-## Requirements
-
-* Ember >= 1.13.0
-* Ember CLI
-
-### Dependencies
-
-#### Bower
-
-The following Bower dependencies are automatically installed into your Ember product:
-
-* `keyevent` - https://github.com/cybertoothca/keyevent - 
-
-## Installation
-
-The following command will install this addon:
-
-```
-ember install ember-cli-text-support-mixins
-```
-
-### Upgrading
-
-When working through the Ember upgrade process, I recommend
-invoking the `ember install ember-cli-text-support-mixins` command once
-you are done to get the latest version of the addon.
-
-This will likely update the dependencies listed above.
 
 ## Usage
 
@@ -194,7 +200,7 @@ _None...at least that I can think of._
 
 ---
 
-# Ember Addon Building And Testing
+# Ember Add-on Building And Testing
 
 ## Setup
 
@@ -202,12 +208,6 @@ _None...at least that I can think of._
 
 ```
 git clone git@github.com:cybertoothca/ember-cli-text-support-mixins.git
-```
-
-### With NPM
-
-```
-npm install
 ```
 
 ### With Yarn
@@ -221,43 +221,41 @@ yarn
 * `ember server`
 * Visit your app at http://localhost:4200.
 
-## Running Addon Tests
+## Running Add-on Tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
+* `npm test` (Runs `ember try:testall` to test your add-on against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
-## Building The Addon
+## Building The Add-on
 
 * `ember build`
 
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
 
-# Linking This Addon For Local Testing
+# Linking This Add-on For Local Testing
 
 ## Linking
 
-1. From the command line at the root of __this__ project run the
-`npm link` command to _link_ this addon within your local
-node repository.
-1. From the _other_ Ember project that you wish to test this addon
-in, execute the following command:
-`npm link ember-cli-text-support-mixins`.
-1. Now in that same _other_ Ember project, you should go into the
-`package.json` and add the ember addon with the version _*_.  It will
-look something like this: `"ember-cli-text-support-mixins": "*"`.  Now
-when/if you execute `npm install` on this _other_ project it
-will know to look for the linked addon rather than fetch it from
-the central repository.
+Use yarn.
+
+```bash
+# from this add-on project
+$ yarn link
+# from the other project that depends on this add-on
+$ yarn link ember-cli-text-support-mixins
+```
 
 ## Unlinking
 
-1. Remove the addon from your local node repository with the following
-command (that can be run anywhere):
-`npm uninstall -g ember-cli-text-support-mixins`
-1. Remove the reference to the `ember-cli-text-support-mixins`
-in your _other_ project's `package.json`.
-1. Run an `npm prune` and `bower prune` from the root of your _other_ project's command line.
+Again, use yarn.
+
+```bash
+# from the other project that linked to this add-on
+$ yarn unlink ember-cli-text-support-mixins
+# from this add-on project
+$ yarn unlink
+```
 
 # Deploying The Dummy Application
 

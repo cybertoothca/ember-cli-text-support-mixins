@@ -1,8 +1,10 @@
 /* global jQuery */
 /* global KeyEvent */
+import { isPresent } from '@ember/utils';
+
+import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import Ember from 'ember';
 
 moduleForComponent('input-text', 'Integration | Component | input text', {
   integration: true
@@ -15,8 +17,8 @@ test('when rendered the .input-text class is present', function (assert) {
 
 test('when form is not submitted by pressing enter', function (assert) {
   let formSubmitted = false;
-  this.set('_form', Ember.Object.create({
-    trigger() {
+  this.set('_form', EmberObject.create({
+    onsubmit() {
       formSubmitted = true;
     }
   }));
@@ -38,9 +40,9 @@ test('when form cannot be found it does not ctrl+enter submit or invoke any befo
   let formSubmitted = false;
   this.set('beforeCtrlEnterSubmitAction', function (event, component, $form) {
     wasCalled = true;
-    assert.ok(Ember.isPresent(event));
-    assert.ok(Ember.isPresent(component));
-    assert.ok(Ember.isPresent($form));
+    assert.ok(isPresent(event));
+    assert.ok(isPresent(component));
+    assert.ok(isPresent($form));
   });
   this.render(hbs`{{input-text ctrlEnterSubmitsForm?=true beforeCtrlEnterSubmitAction=beforeCtrlEnterSubmitAction}}`);
 
@@ -62,12 +64,12 @@ test('when hooking into the before ctrl-enter-submits-form hook', function (asse
   let formSubmitted = false;
   this.set('beforeCtrlEnterSubmitAction', function (event, component, $form) {
     wasCalled = true;
-    assert.ok(Ember.isPresent(event));
-    assert.ok(Ember.isPresent(component));
-    assert.ok(Ember.isPresent($form));
+    assert.ok(isPresent(event));
+    assert.ok(isPresent(component));
+    assert.ok(isPresent($form));
   });
-  this.set('_form', Ember.Object.create({
-    trigger() {
+  this.set('_form', EmberObject.create({
+    onsubmit() {
       formSubmitted = true;
     }
   }));
@@ -91,12 +93,12 @@ test('when hooking into the after ctrl-enter-submits-form hook', function (asser
   let formSubmitted = false;
   this.set('afterCtrlEnterSubmitAction', function (event, component, $form) {
     wasCalled = true;
-    assert.ok(Ember.isPresent(event));
-    assert.ok(Ember.isPresent(component));
-    assert.ok(Ember.isPresent($form));
+    assert.ok(isPresent(event));
+    assert.ok(isPresent(component));
+    assert.ok(isPresent($form));
   });
-  this.set('_form', Ember.Object.create({
-    trigger() {
+  this.set('_form', EmberObject.create({
+    onsubmit() {
       formSubmitted = true;
     }
   }));
@@ -119,8 +121,8 @@ test('when hooking into the before escape-key-clears hook', function (assert) {
   let wasCalled = false;
   this.set('beforeClearAction', function (event, component) {
     wasCalled = true;
-    assert.ok(Ember.isPresent(event));
-    assert.ok(Ember.isPresent(component));
+    assert.ok(isPresent(event));
+    assert.ok(isPresent(component));
   });
   this.render(hbs`{{input-text escapeKeyClears?=true beforeClearAction=beforeClearAction}}`);
 
@@ -137,8 +139,8 @@ test('when hooking into the after escape-key-clears hook', function (assert) {
   let wasCalled = false;
   this.set('afterClearAction', function (event, component) {
     wasCalled = true;
-    assert.ok(Ember.isPresent(event));
-    assert.ok(Ember.isPresent(component));
+    assert.ok(isPresent(event));
+    assert.ok(isPresent(component));
   });
   this.render(hbs`{{input-text escapeKeyClears?=true afterClearAction=afterClearAction}}`);
 

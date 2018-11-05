@@ -1,27 +1,40 @@
 /* global KeyEvent */
-import Ember from 'ember';
+import { isPresent } from '@ember/utils';
+import Mixin from '@ember/object/mixin';
+import ClosestFormMixin from './closest-form';
 
-export default Ember.Mixin.create({
+export default Mixin.create(ClosestFormMixin, {
   'enterWillSubmitForm?': true,
+
   keyDown(event) {
     this._super(...arguments);
-    if ((!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) &&
-      (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN)) {
+    if (this._notAltCtrlMetaShift(event) && this._isEnterOrReturnKey(event)) {
       event.preventDefault();
-      const $form = this.get('_form');
-      if (Ember.isPresent($form) && this.get('enterWillSubmitForm?')) {
+      const form = this.get('_form');
+      if (isPresent(form) && this.get('enterWillSubmitForm?')) {
         // TODO: trigger before and after?
-        $form.trigger('submit');
+        form.onsubmit();
       }
       return false;
     }
     return true;
   },
+
   /**
-   * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't
-   * seem to work with Ember wrapped TextSupport components?  Using a jQuery find of the closest form instead.
+   * @param event the event to test
+   * @return {boolean} true if the enter OR the return key was pressed, false otherwise
+   * @private
    */
-  _form: Ember.computed(function () {
-    return this.$().closest('form');
-  })
+  _isEnterOrReturnKey(event) {
+    return event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN;
+  },
+
+  /**
+   * @param event the event to test
+   * @return {boolean} true if none of the modifier keys are pressed (alt, ctrl, meta, and shift), false otherwise
+   * @private
+   */
+  _notAltCtrlMetaShift(event) {
+    return !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey;
+  }
 });
