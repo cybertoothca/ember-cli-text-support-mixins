@@ -1,4 +1,5 @@
 import { isPresent } from '@ember/utils';
+import { trySet } from '@ember/object';
 import Mixin from '@ember/object/mixin';
 
 /**
@@ -42,7 +43,8 @@ export default Mixin.create({
         this.get('beforeClearAction')(event, this);
       }
 
-      this.set('value', '');
+      this.element.value = '';  // for Ember-2.4 & Ember-2.8
+      trySet(this, 'value', '');
 
       // fire the after-clear action
       if (isPresent(this.get('afterClearAction'))) {
