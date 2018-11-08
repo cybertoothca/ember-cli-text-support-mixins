@@ -1,0 +1,14 @@
+[ver:1,total:720]
+.gtm/terminal.app:152,1541649600:152,r
+tests/integration/components/input-text-test.js:126,1541649600:126,r
+.circleci/config.yml:106,1541649600:106,m
+tests/dummy/app/controllers/demo/input-text-enter-submits.js:82,1541649600:82,r
+README.md:63,1541649600:63,m
+tests/dummy/app/index.html:40,1541649600:40,r
+.gitignore:30,1541649600:30,m
+addon/mixins/focus-selects-text.js:30,1541649600:30,m
+addon/mixins/escape-key-clears.js:30,1541649600:30,m
+package.json:20,1541649600:20,r
+install_ember_addons.sh:15,1541649600:15,r
+config/ember-try.js:14,1541649600:14,m
+addon/mixins/trigger-focus.js:12,1541649600:12,m
