@@ -1,0 +1,10 @@
+[ver:1,total:300]
+_config.yml:60,1541649600:60,r
+README.md:45,1541649600:45,r
+tests/dummy/app/templates/demo/text-area-select-text.hbs:40,1541649600:40,m
+package.json:35,1541649600:35,m
+tests/dummy/app/controllers/demo/input-text-enter-submits.js:30,1541649600:30,r
+.circleci/config.yml:30,1541649600:30,r
+tests/dummy/app/templates/index.hbs:20,1541649600:20,r
+tests/dummy/app/templates/application.hbs:20,1541649600:20,m
+tests/dummy/app/templates/demo/input-text-select-text.hbs:20,1541649600:20,m
