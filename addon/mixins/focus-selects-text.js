@@ -1,6 +1,5 @@
 import { later } from '@ember/runloop';
 import Mixin from '@ember/object/mixin';
-import { computed, get } from '@ember/object';
 
 /**
  * When focus is placed in a `input[:text]` or `textarea` the text within is selected.
@@ -12,12 +11,11 @@ export default Mixin.create({
    */
   focusIn(/*event*/) {
     this._super(...arguments);
-    if (this.get('focusSelectsText?') && this.get('_elementIsTextOrTextarea')) {
+    if (this.get('focusSelectsText?')) {
       // using a runloop to make sure textarea text can be selected in webkit/safari
       // @see https://stackoverflow.com/a/6201757/545137
-
       later(this, () => {
-        this.get('element').select();
+        this.element.select();
       }, 1);
     }
   },
@@ -26,9 +24,5 @@ export default Mixin.create({
    * By default, focus on `this` input/textarea will select the text within.  Set this to `false` if you do not
    * want this behaviour.
    */
-  'focusSelectsText?': true,
-
-  _elementIsTextOrTextarea: computed('element.type', function () {
-    return ['text', 'textarea'].includes(get(this, 'element.type'));
-  })
+  'focusSelectsText?': true
 });

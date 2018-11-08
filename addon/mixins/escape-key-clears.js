@@ -1,4 +1,5 @@
 import { isPresent } from '@ember/utils';
+import { trySet } from '@ember/object';
 import Mixin from '@ember/object/mixin';
 
 /**
@@ -11,19 +12,24 @@ export default Mixin.create({
    * The function will receive two parameters: the first is the DOM event, and the second is
    * `this` component.
    */
-  afterClearAction: undefined,
+  afterClearAction() {
+    // override accordingly
+  },
 
   /**
    * Pass in a closure function to fire before the value is cleared.
    * The function will receive two parameters: the first is the DOM event, and the second is
    * `this` component.
    */
-  beforeClearAction: undefined,
+  beforeClearAction() {
+    // override accordingly
+  },
 
   /**
    * By default, pressing the ESC key will clear this' `value` property.  Set this to `false` if you do not
    * want this behaviour.
    */
+
   'escapeKeyClears?': true,
 
   /**
@@ -37,7 +43,8 @@ export default Mixin.create({
         this.get('beforeClearAction')(event, this);
       }
 
-      this.set('value', '');
+      this.element.value = '';  // for Ember-2.4 & Ember-2.8
+      trySet(this, 'value', '');
 
       // fire the after-clear action
       if (isPresent(this.get('afterClearAction'))) {
