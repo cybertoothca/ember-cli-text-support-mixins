@@ -42,11 +42,14 @@
     "ember-cli-node-assets": "^0.2.2"
   },
   "devDependencies": {
-    "bootswatch": "3.3.7",
+    "@fortawesome/ember-fontawesome": "^0.1.8",
+    "@fortawesome/free-brands-svg-icons": "^5.5.0",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "bootstrap": "^4.1.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.18.2",
-    "ember-cli-bootstrap3-sass": "^1.0.6",
+    "ember-cli-bootstrap-4": "^0.7.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-deploy": "^1.0.2",
     "ember-cli-deploy-build": "^1.1.1",
@@ -58,7 +61,7 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^4.1.1",
-    "ember-cli-sass": "^8.0.1",
+    "ember-cli-sass": "^7.2.0",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
@@ -73,6 +76,7 @@
     "eslint-plugin-node": "^5.2.1",
     "keyevent": "^1.1.0",
     "loader.js": "^4.2.3",
+    "popper.js": "^1.14.0",
     "sass": "^1.14.3"
   },
   "engines": {

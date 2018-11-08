@@ -1,6 +1,8 @@
-# ember-cli-text-support-mixins [![GitHub version](http://badge.fury.io/gh/cybertoothca%2Fember-cli-text-field-mixins.svg)](http://badge.fury.io/gh/cybertoothca%2Fember-cli-text-field-mixins) ![](https://embadge.io/v1/badge.svg?start=1.13.0)
+# ember-cli-text-support-mixins
 
-[![npm version](http://badge.fury.io/js/ember-cli-text-support-mixins.svg)](http://badge.fury.io/js/ember-cli-text-support-mixins) ![downloads](https://img.shields.io/npm/dy/ember-cli-text-support-mixins.svg) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-text-support-mixins.svg) [![ember-observer-badge](http://emberobserver.com/badges/ember-cli-text-support-mixins.svg)](http://emberobserver.com/addons/ember-cli-text-support-mixins) [![License](http://img.shields.io/npm/l/ember-cli-text-support-mixins.svg)](LICENSE.md)
+[![npm version](http://badge.fury.io/js/ember-cli-text-support-mixins.svg)](http://badge.fury.io/js/ember-cli-text-support-mixins) ![downloads](https://img.shields.io/npm/dy/ember-cli-text-support-mixins.svg) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins) 
+
+![Dependencies](http://david-dm.org/cybertoothca/ember-cli-text-support-mixins.svg) [![ember-observer-badge](http://emberobserver.com/badges/ember-cli-text-support-mixins.svg)](http://emberobserver.com/addons/ember-cli-text-support-mixins) [![License](http://img.shields.io/npm/l/ember-cli-text-support-mixins.svg)](LICENSE.md)
 
 Ember.TextSupport enhancements including a `{{input-text}}` and `{{text-area}}` component.
 
