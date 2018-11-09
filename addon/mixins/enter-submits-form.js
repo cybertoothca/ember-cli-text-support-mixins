@@ -1,10 +1,16 @@
 /* global KeyEvent */
 import { once } from '@ember/runloop';
 import { deprecatingAlias } from '@ember/object/computed';
+import ClosestForm from './closest-form';
 import FormSubmissionUtils from './form-submission-utils';
 import Mixin from '@ember/object/mixin';
 
-export default Mixin.create(FormSubmissionUtils, {
+/**
+ * When the ENTER is pressed the nearest form up the DOM is triggered for submit.
+ *
+ * By default this behaviour is activated.  Set `enterSubmitsForm?` boolean to enable/disable.
+ */
+export default Mixin.create(ClosestForm, FormSubmissionUtils, {
 
   /**
    * The version 1.x property for pressing enter.  Deprecated in favour of `enterSubmitsForm?`.

@@ -1,7 +1,9 @@
 import { isPresent } from '@ember/utils';
-import { computed } from '@ember/object';
 import Mixin from '@ember/object/mixin';
 
+/**
+ * A mixin used by the `ctrl-enter-submits-form` and `enter-submits-form` mixins
+ */
 export default Mixin.create({
   /**
    * Pass in a closure function to fire after the form submit is triggered.
@@ -20,17 +22,6 @@ export default Mixin.create({
   beforeSubmit() {
     // override accordingly
   },
-
-  /**
-   * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't
-   * seem to work with Ember wrapped TextSupport components?  Using `closest('form')` to find of
-   * the closest form instead.
-   * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
-   * @private
-   */
-  _form: computed('element', function () {
-    return this.get('element').closest('form');
-  }),
 
   /**
    *

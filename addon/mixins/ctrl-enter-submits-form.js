@@ -1,14 +1,16 @@
 /* global KeyEvent */
 import { once } from '@ember/runloop';
 import { deprecatingAlias } from '@ember/object/computed';
+import ClosestForm from './closest-form';
 import FormSubmissionUtils from './form-submission-utils';
 import Mixin from '@ember/object/mixin';
 
 /**
- * When the CTRL+ENTER is pressed the nearest form up the dom is triggered for submit.  By default this behaviour
- * is not activated.  See `ctrlEnterSubmitsForm?` for more information.
+ * When the CTRL+ENTER is pressed the nearest form up the DOM is triggered for submit.
+ *
+ * By default this behaviour is not activated.  Set `ctrlEnterSubmitsForm?` boolean to enable/disable.
  */
-export default Mixin.create(FormSubmissionUtils, {
+export default Mixin.create(ClosestForm, FormSubmissionUtils, {
   /**
    * Pass in a closure function to fire after the form submit is triggered.
    * The function will receive three parameters: the first is the DOM event, the second is

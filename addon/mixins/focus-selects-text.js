@@ -2,7 +2,7 @@ import { later } from '@ember/runloop';
 import Mixin from '@ember/object/mixin';
 
 /**
- * When focus is placed in a `input[:text]` or `textarea` the text within is selected.
+ * When focus is placed in an `input[:text]` or `textarea` the text within is selected.
  */
 export default Mixin.create({
 
