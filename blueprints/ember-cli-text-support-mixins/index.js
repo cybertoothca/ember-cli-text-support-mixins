@@ -5,6 +5,12 @@ module.exports = {
   normalizeEntityName: function () {
   },
   afterInstall: function (/*options*/) {
-    return this.addPackagesToProject([{name: 'keyevent'}]);
+    return this.addAddonsToProject({
+      packages: [
+        { name: 'ember-cli-element-closest-polyfill' }
+      ]
+    }).then(() => {
+      return this.addPackagesToProject([{ name: 'keyevent' }]);
+    });
   }
 };

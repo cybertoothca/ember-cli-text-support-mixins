@@ -4,8 +4,9 @@ ember install @fortawesome/ember-fontawesome
 yarn add @fortawesome/free-solid-svg-icons --dev
 yarn add @fortawesome/free-brands-svg-icons --dev
 
-ember install ember-cli-bootstrap-4
+ember install ember-cli-element-closest-polyfill
 
+ember install ember-cli-bootstrap-4
 ember install ember-cli-deploy
 ember install ember-cli-deploy-build
 ember install ember-cli-deploy-gzip

@@ -46,9 +46,14 @@ This add-on no longer depends on JQuery.
 
 ### Dependencies
 
+#### `ember-cli-element-closest-polyfill`
+
+Polyfill terrible M$ browsers with the `Element.closest()` & `Element.matches()` using 
+[`ember-cli-element-closest-polyfill`](https://github.com/miguelcobain/ember-cli-element-closest-polyfill).
+
 #### `keyevent`
 
-The constants from [`keyevent`](https://github.com/cybertoothca/keyevent) are installed 
+The constants from [`keyevent`](https://github.com/cybertoothca/keyevent) are installed
 by yarn and `ember-cli-node-assets`.
 
 ## Demo
