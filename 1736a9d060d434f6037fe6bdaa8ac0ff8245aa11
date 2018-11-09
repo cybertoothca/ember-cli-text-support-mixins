@@ -1,0 +1,15 @@
+[ver:1,total:1740]
+_config.yml:572,1541649600:210,1541790000:362,d
+blueprints/ember-cli-text-support-mixins/index.js:285,1541790000:15,1541793600:270,m
+.gtm/terminal.app:240,1541649600:30,1541793600:210,r
+install_ember_addons.sh:225,1541793600:225,m
+README.md:207,1541790000:12,1541793600:195,m
+package.json:60,1541793600:60,m
+.git/info/exclude:30,1541790000:30,r
+tests/dummy/app/templates/demo/input-text-select-text.hbs:27,1541790000:27,r
+.gitignore:20,1541790000:20,r
+tests/dummy/app/templates/application.hbs:20,1541790000:20,r
+tests/dummy/app/controllers/demo/input-text-enter-submits.js:15,1541790000:15,r
+tests/integration/components/input-text-test.js:15,1541790000:15,r
+.circleci/config.yml:12,1541790000:12,r
+tests/dummy/app/templates/index.hbs:12,1541790000:12,r
