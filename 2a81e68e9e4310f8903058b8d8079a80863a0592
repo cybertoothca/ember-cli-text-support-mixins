@@ -1,0 +1,16 @@
+[ver:1,total:3240]
+tests/dummy/app/templates/index.hbs:1795,1541800800:1045,1541804400:750,m
+addon/mixins/ctrl-enter-submits-form.js:260,1541804400:260,m
+addon/mixins/trigger-focus.js:242,1541800800:30,1541804400:212,m
+addon/mixins/form-submission-utils.js:195,1541800800:15,1541804400:180,m
+addon/mixins/enter-submits-form.js:110,1541804400:110,m
+package.json:110,1541800800:110,r
+addon/mixins/closest-form.js:92,1541804400:92,m
+addon/mixins/focus-selects-text.js:80,1541804400:80,m
+addon/components/input-text.js:76,1541800800:50,1541804400:26,r
+addon/mixins/escape-key-clears.js:75,1541804400:75,m
+tests/dummy/app/templates/application.hbs:70,1541800800:40,1541804400:30,r
+addon/mixins/aria-attributes.js:42,1541804400:42,m
+.gtm/terminal.app:40,1541804400:40,r
+tests/dummy/config/environment.js:30,1541800800:30,m
+addon/components/text-area.js:23,1541804400:23,r
