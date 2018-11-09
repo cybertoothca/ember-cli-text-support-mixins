@@ -1,0 +1,12 @@
+[ver:1,total:3360]
+tests/dummy/app/templates/application.hbs:1614,1541793600:120,1541797200:1494,m
+tests/dummy/app/templates/demo/index.hbs:745,1541797200:275,1541800800:470,r
+addon/components/input-text.js:300,1541797200:150,1541800800:150,m
+.gtm/terminal.app:285,1541793600:240,1541797200:15,1541800800:30,r
+addon/mixins/aria-attributes.js:240,1541797200:220,1541800800:20,m
+addon/components/text-area.js:110,1541800800:110,m
+coverage/tests/dummy/app/templates/application.hbs.html:15,1541797200:15,r
+tests/dummy/app/templates/demo/input-text-select-text.hbs:15,1541797200:15,r
+tests/acceptance/autofocus-test.js:12,1541797200:12,r
+coverage/lcov-report/tests/dummy/app/templates/application.hbs.html:12,1541797200:12,r
+yarn.lock:12,1541797200:12,r
