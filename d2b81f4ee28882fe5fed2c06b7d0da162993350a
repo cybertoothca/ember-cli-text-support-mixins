@@ -1,0 +1,8 @@
+[ver:1,total:1620]
+tests/dummy/app/components/copy-install-to-clipboard.js:650,1541811600:650,r
+tests/dummy/app/templates/index.hbs:250,1541811600:250,m
+tests/dummy/app/templates/application.hbs:210,1541811600:210,m
+.gtm/terminal.app:200,1541811600:200,r
+install_ember_addons.sh:155,1541811600:155,r
+node_modules/clipboard/dist/clipboard.js:120,1541811600:120,r
+package.json:35,1541811600:35,r
