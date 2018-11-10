@@ -9,7 +9,7 @@ export default Component.extend({
 
   'data-clipboard-text': '',
 
-  didDestroyElement() {
+  willDestroyElement() {
     this.get('clipboard').destroy();
   },
 
