@@ -1,0 +1,9 @@
+[ver:1,total:360]
+.gtm/terminal.app:170,1541811600:170,r
+config/deploy.js:50,1541811600:50,r
+ember-cli-build.js:34,1541811600:34,m
+testem.js:34,1541811600:34,m
+index.js:30,1541811600:30,r
+tests/acceptance/escape-clears-test.js:20,1541811600:20,r
+.travis.yml:12,1541811600:12,r
+tests/integration/components/text-area-test.js:10,1541811600:10,r
