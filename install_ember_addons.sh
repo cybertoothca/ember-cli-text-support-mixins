@@ -1,6 +1,6 @@
 #!/bin/sh
 
-yarn add clipboard --dev
+yarn add --dev clipboard@^1.7.1
 
 ember install @fortawesome/ember-fontawesome
 yarn add @fortawesome/free-solid-svg-icons --dev
