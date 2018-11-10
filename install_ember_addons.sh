@@ -16,6 +16,7 @@ ember install ember-cli-deploy
 ember install ember-cli-deploy-build
 ember install ember-cli-deploy-gzip
 ember install ember-cli-deploy-s3
+ember install ember-cli-deploy-slack
 
 ember install ember-cli-element-closest-polyfill
 

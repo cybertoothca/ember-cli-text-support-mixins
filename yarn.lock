@@ -2948,6 +2948,12 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
+coffeescript@~1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/coffeescript/-/coffeescript-1.8.0.tgz#4c503e2dbdf268aee33fdd34cb259d53ff963518"
+  dependencies:
+    mkdirp "~0.3.5"
+
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/collection-visit/-/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -3735,7 +3741,7 @@ ember-cli-deploy-gzip@^1.0.1:
     minimatch "^3.0.3"
     rsvp "^3.5.0"
 
-ember-cli-deploy-plugin@^0.2.1, ember-cli-deploy-plugin@^0.2.2, ember-cli-deploy-plugin@^0.2.6:
+ember-cli-deploy-plugin@^0.2.1, ember-cli-deploy-plugin@^0.2.2, ember-cli-deploy-plugin@^0.2.3, ember-cli-deploy-plugin@^0.2.6:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/ember-cli-deploy-plugin/-/ember-cli-deploy-plugin-0.2.9.tgz#a3d395b8adad7ef68d8bacdd0b0f4a61bcf9e651"
   dependencies:
@@ -3760,6 +3766,18 @@ ember-cli-deploy-s3@^1.4.0:
     minimatch "^3.0.3"
     proxy-agent "^2.0.0"
     rsvp "^3.5.0"
+
+ember-cli-deploy-slack@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-deploy-slack/-/ember-cli-deploy-slack-1.0.1.tgz#9dba64b6362c720529bb832d4e58f44e5417427c"
+  dependencies:
+    chalk "^1.0.0"
+    core-object "^2.0.0"
+    ember-cli-deploy-plugin "^0.2.3"
+    moment "^2.17.1"
+    node-slackr "^0.2.0"
+    rsvp "^3.5.0"
+    silent-error "^1.0.0"
 
 ember-cli-deploy@^1.0.2:
   version "1.0.2"
@@ -6541,7 +6559,7 @@ lodash@^3.10.0, lodash@^3.10.1, lodash@^3.9.3:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.17.10, lodash@^4.5.1, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.17.10, lodash@^4.5.1, lodash@~4.17.10:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -6890,13 +6908,17 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
-mkdirp@^0.3.5:
+mkdirp@^0.3.5, mkdirp@~0.3.5:
   version "0.3.5"
   resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz#de3e5f8961c88c787ee1368df849ac4413eca8d7"
 
 mktemp@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/mktemp/-/mktemp-0.4.0.tgz#6d0515611c8a8c84e484aa2000129b98e981ff0b"
+
+moment@^2.17.1:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
 morgan@^1.8.1:
   version "1.8.2"
@@ -7114,6 +7136,14 @@ node-sass@^4.7.2:
     sass-graph "^2.2.4"
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
+
+node-slackr@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/node-slackr/-/node-slackr-0.2.0.tgz#65d4b7958465b6cb2ca24d41dcdde5955bbb4bdb"
+  dependencies:
+    coffeescript "~1.8.0"
+    lodash "^4.11.1"
+    request "^2.72.0"
 
 "nopt@2 || 3", nopt@^3.0.6:
   version "3.0.6"
@@ -8021,7 +8051,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.87.0, request@^2.88.0:
+request@^2.72.0, request@^2.87.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:

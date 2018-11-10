@@ -58,6 +58,7 @@
     "ember-cli-deploy-build": "^1.1.1",
     "ember-cli-deploy-gzip": "^1.0.1",
     "ember-cli-deploy-s3": "^1.4.0",
+    "ember-cli-deploy-slack": "^1.0.1",
     "ember-cli-element-closest-polyfill": "^0.0.1",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-font-awesome-sass": "^1.0.4",

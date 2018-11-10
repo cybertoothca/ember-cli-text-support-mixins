@@ -25,7 +25,7 @@ Ember.TextSupport enhancements including a `{{input-text}}` and `{{text-area}}` 
 ## Demo & Documentation
 
 The demonstration web application can be found here:
-[http://ember-cli-text-support-mixins.cybertooth.io/](http://ember-cli-text-support-mixins.cybertooth.io/). 
+[https://ember-cli-text-support-mixins.cybertooth.io/](https://ember-cli-text-support-mixins.cybertooth.io/). 
 
 ## Installation
 
@@ -122,13 +122,17 @@ aws_secret_access_key = <SECRET>
 
 Deploy by invoking the following command: `ember deploy production`
 
-Confirm your changes are showing up in our S3 container: http://ember-cli-text-support-mixins.cybertooth.io/
+Confirm your changes are showing up at: https://ember-cli-text-support-mixins.cybertooth.io/
+
+You may need to go into AWS CloudFront to expire the index.html file before the site 
+changes are picked up (see [issue](https://github.com/cybertoothca/ember-cli-text-support-mixins/issues/29)).
 
 # Releasing & Publishing To NPM
 
 ```bash
-$ npm version x.y.z-sub.#
+$ yarn version --new-version x.y.z-sub.#
 $ git push
 $ git push --tags
-$ npm publish
+$ git checkout vx.y.z-sub.#
+$ yarn publish
 ```
