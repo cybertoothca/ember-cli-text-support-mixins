@@ -1,0 +1,14 @@
+[ver:1,total:3540]
+tests/dummy/app/components/copy-install-to-clipboard.js:1035,1541808000:1035,m
+tests/dummy/app/templates/application.hbs:580,1541804400:126,1541808000:454,m
+tests/dummy/app/routes/application.js:578,1541804400:18,1541808000:560,r
+.gtm/terminal.app:478,1541804400:198,1541808000:280,r
+tests/dummy/app/routes/index.js:329,1541804400:294,1541808000:35,r
+index.js:207,1541804400:207,r
+install_ember_addons.sh:144,1541804400:69,1541808000:75,m
+tests/dummy/app/templates/components/copy-install-to-clipboard.hbs:71,1541808000:71,m
+tests/dummy/app/templates/index.hbs:52,1541804400:42,1541808000:10,r
+addon/mixins/form-submission-utils.js:24,1541804400:24,r
+tests/acceptance/escape-clears-test.js:15,1541804400:15,r
+addon/mixins/ctrl-enter-submits-form.js:15,1541804400:15,r
+README.md:12,1541804400:12,r
