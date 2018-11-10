@@ -3,11 +3,13 @@ import Mixin from '@ember/object/mixin';
 
 /**
  * Simply use the component's `element` to find it's `closest('form')`.
+ *
+ * Leveraging some polyfill from `ember-cli-element-closest-polyfill`.
  */
 export default Mixin.create({
   /**
-   * Grab the nearest form.  Normally you can just ask an input for it's `this.form`, however that doesn't
-   * seem to work with Ember wrapped TextSupport components?  Using a jQuery find of the closest form instead.
+   * Grab the nearest form.
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
    * @private
    */
   _form: computed(function () {

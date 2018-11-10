@@ -3,7 +3,9 @@ import { trySet } from '@ember/object';
 import Mixin from '@ember/object/mixin';
 
 /**
- * When the escape key is pressed, the `value` proper will be cleared.
+ * When the escape key is pressed, the `value` of the text `input`/`textarea` will be cleared.
+ *
+ * Note, this does not register the clearing with the undo-stack of browsers.
  */
 export default Mixin.create({
 

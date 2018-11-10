@@ -1,0 +1,56 @@
+<section class="my-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
+        <div class="list-group">
+
+          <div class="list-group-item list-group-item-dark">
+            <div class="d-flex w-100 justify-content-between">
+              <h4 class="mb-1">Textbox</h4>
+              <code class="small">\{{input-text}}</code>
+            </div>
+          </div>
+
+          {{#link-to "demo.index" class="list-group-item list-group-item-action"}}
+            Autofocus
+          {{/link-to}}
+          {{#link-to "demo.input-text-select-text" class="list-group-item list-group-item-action"}}
+            Select Text
+          {{/link-to}}
+          {{#link-to "demo.input-text-escape-clears" class="list-group-item list-group-item-action"}}
+            <kbd class="shadow">ESC</kbd> Clears
+          {{/link-to}}
+          {{#link-to "demo.input-text-enter-submits" class="list-group-item list-group-item-action"}}
+            <kbd class="shadow">ENTER</kbd> Submits
+          {{/link-to}}
+          {{#link-to "demo.input-text-ctrl-enter-submits" class="list-group-item list-group-item-action"}}
+            <kbd class="shadow">CTRL+ENTER</kbd> Submits
+          {{/link-to}}
+
+          <div class="list-group-item list-group-item-dark">
+            <div class="d-flex w-100 justify-content-between">
+              <h4 class="mb-1">Textarea</h4>
+              <code class="small">\{{text-area}}</code>
+            </div>
+          </div>
+
+          {{#link-to "demo.text-area-autofocus" class="list-group-item list-group-item-action"}}
+            Autofocus
+          {{/link-to}}
+          {{#link-to "demo.text-area-select-text" class="list-group-item list-group-item-action"}}
+            Select Text
+          {{/link-to}}
+          {{#link-to "demo.text-area-escape-clears" class="list-group-item list-group-item-action"}}
+            <kbd class="shadow">ESC</kbd> Clears
+          {{/link-to}}
+          {{#link-to "demo.text-area-ctrl-enter-submits" class="list-group-item list-group-item-action"}}
+            <kbd class="shadow">CTRL+ENTER</kbd> Submits
+          {{/link-to}}
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">
+        {{outlet}}
+      </div>
+    </div>
+  </div>
+</section>
