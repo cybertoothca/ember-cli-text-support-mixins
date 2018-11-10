@@ -16,7 +16,7 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    const installCommand = `ember install ${get(config, 'APP.name')}@~${get(config, 'APP.version').split('-')[0]}`;
+    const installCommand = `ember install ${get(config, 'APP.name')}@^${get(config, 'APP.version').split('-')[0]}`;
     this.set('data-clipboard-text', installCommand);
 
     this.set('clipboard', new Clipboard(this.element));
