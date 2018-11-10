@@ -11,17 +11,25 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/cybertoothca/ember-cli-text-support-mixins" target="_blank">
+            {{#link-to "demo.index" class="nav-link" title="Demo"}}
+              {{fa-icon "tv" size="2x"}}
+            {{/link-to}}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/cybertoothca/ember-cli-text-support-mixins" target="_blank"
+               title="Github">
               {{fa-icon "github" prefix="fab" size="2x"}}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.npmjs.com/package/ember-cli-text-support-mixins" target="_blank">
+            <a class="nav-link" href="https://www.npmjs.com/package/ember-cli-text-support-mixins" target="_blank"
+               title="Package">
               {{fa-icon "npm" prefix="fab" size="2x"}}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://emberobserver.com/addons/ember-cli-text-support-mixins" target="_blank">
+            <a class="nav-link" href="https://emberobserver.com/addons/ember-cli-text-support-mixins" target="_blank"
+               title="Addon">
               {{fa-icon "ember" prefix="fab" size="2x"}}
             </a>
           </li>
@@ -52,7 +60,7 @@
 
 <section class="bg-dark text-light">
   <div class="container">
-    <footer class="pt-4 my-md-5 pt-md-5">
+    <footer class="pt-4 mt-md-5 py-md-5">
       <div class="row">
         <div class="col-12 col-md text-center">
           <img
