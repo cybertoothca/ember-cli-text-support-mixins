@@ -1,0 +1,6 @@
+[ver:1,total:660]
+tests/dummy/app/components/copy-install-to-clipboard.js:285,1541808000:60,1541811600:225,m
+index.js:210,1541808000:180,1541811600:30,r
+config/deploy.js:90,1541811600:90,m
+.gtm/terminal.app:45,1541808000:30,1541811600:15,r
+addon/mixins/ctrl-enter-submits-form.js:30,1541808000:30,r
