@@ -3093,9 +3093,9 @@ crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
 
-ct-emberjs-bling@^0.0.1-rc.4:
-  version "0.0.1-rc.4"
-  resolved "https://registry.yarnpkg.com/ct-emberjs-bling/-/ct-emberjs-bling-0.0.1-rc.4.tgz#d420e55fa43d41cf670f2d7a4e45a702455d3904"
+ct-emberjs-bling@^0.0.1-rc.5:
+  version "0.0.1-rc.5"
+  resolved "https://registry.yarnpkg.com/ct-emberjs-bling/-/ct-emberjs-bling-0.0.1-rc.5.tgz#12213ca59897f8a8a26a00f963d2fa6e90f0c029"
   dependencies:
     clipboard "^2"
     ember-auto-import "^1.2.15"

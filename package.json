@@ -48,7 +48,7 @@
     "bootstrap": "^4.1.0",
     "broccoli-asset-rev": "^2.4.5",
     "clipboard": "^2.0.2",
-    "ct-emberjs-bling": "^0.0.1-rc.4",
+    "ct-emberjs-bling": "^0.0.1-rc.5",
     "ember-ajax": "^3.0.0",
     "ember-auto-import": "^1.2.15",
     "ember-cli": "~2.18.2",

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-yarn add --dev clipboard@^1.7.1
+yarn add --dev clipboard
+
+ember install ct-emberjs-bling
 
 ember install @fortawesome/ember-fontawesome
 yarn add @fortawesome/free-solid-svg-icons --dev
