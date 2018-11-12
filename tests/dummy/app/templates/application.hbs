@@ -16,18 +16,9 @@
 
 <section class="my-3">
   <div class="container">
-    <a href="https://badge.fury.io/js/ember-cli-text-support-mixins" target="_blank">
-      <img alt="npm version" class="shadow" src="https://badge.fury.io/js/ember-cli-text-support-mixins.svg"></a>
-    <a href="https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins" target="_blank">
-      <img alt="built with ember-cli-2.18" class="shadow"
-           src="https://img.shields.io/badge/Built_With_ember--cli-2.18.2-orange.svg"></a>
-    {{#copy-install-to-clipboard}}
-      <img
-        alt="click to copy install command"
-        class="shadow"
-        src="https://img.shields.io/badge/Install-ember_install_ember--cli--text--support--mixins-lightgray.svg"
-        title="Click to copy the intall command to your clipboard.">
-    {{/copy-install-to-clipboard}}
+    {{badge-fury-io appName=(read-config "APP.name")}}
+    {{badge-built-with appName=(read-config "APP.name") emberCliVersion="2.18.2"}}
+    {{badge-install-command appName=(read-config "APP.name") version=(app-version versionOnly=true)}}
   </div>
 </section>
 
