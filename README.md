@@ -61,6 +61,8 @@ Polyfill terrible M$ browsers with the `Element.closest()` & `Element.matches()`
 The constants from [`keyevent`](https://github.com/cybertoothca/keyevent) are installed
 by yarn and `ember-cli-node-assets`.
 
+---
+
 # Contributing
 
 ## Setup
@@ -130,9 +132,7 @@ changes are picked up (see [issue](https://github.com/cybertoothca/ember-cli-tex
 # Releasing & Publishing To NPM
 
 ```bash
-$ yarn version --new-version x.y.z-sub.#
+$ yarn publish
 $ git push
 $ git push --tags
-$ git checkout vx.y.z-sub.#
-$ yarn publish
 ```
