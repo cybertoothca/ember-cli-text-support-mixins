@@ -41,6 +41,8 @@ by yarn and `ember-cli-node-assets`.
 
 ## Contributing
 
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
 ### Installation
 
 - `git clone git@github.com:cybertoothca/ember-cli-text-support-mixins.git`
