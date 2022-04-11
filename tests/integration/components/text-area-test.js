@@ -1,14 +1,15 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { render, find } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
+import { setupRenderingTest } from "ember-qunit";
+import hbs from "htmlbars-inline-precompile";
+import { module, test } from "qunit";
 
-module('Integration | Component | text area', function(hooks) {
+import { render } from "@ember/test-helpers";
+
+module("Integration | Component | text area", function (hooks) {
   setupRenderingTest(hooks);
 
-  test('when rendered without block the .text-area class is present', async function(assert) {
+  test("when rendered without block the .text-area class is present", async function (assert) {
     await render(hbs`{{text-area}}`);
-    assert.ok(find('textarea').classList.contains('text-area'));
+    assert.dom("textarea").hasClass("text-area");
   });
 
   // test('when rendered with block the .text-area class is present', function (assert) {

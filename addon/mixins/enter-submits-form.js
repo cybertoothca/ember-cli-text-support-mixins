@@ -33,8 +33,8 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
   insertNewline(event) {
     this._super(...arguments);
 
-    if (this.get('enterSubmitsForm?') && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
-      once(this, this._triggerFormSubmission, this.get('afterAction'), this.get('beforeAction'), event, this.get('_form'))
+    if (this['enterSubmitsForm?'] && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+      once(this, this._triggerFormSubmission, this.afterAction, this.beforeAction, event, this._form)
     }
   },
 
