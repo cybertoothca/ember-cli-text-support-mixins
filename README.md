@@ -44,6 +44,7 @@ by yarn and `ember-cli-node-assets`.
 
 ### Linting
 
+- `yarn lint:hbs`
 - `yarn lint:js`
 - `yarn lint:js --fix`
 
