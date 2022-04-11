@@ -5240,10 +5240,10 @@ electron-to-chromium@^1.3.47, electron-to-chromium@^1.4.84:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.106.tgz#e7a3bfa9d745dd9b9e597616cb17283cc349781a"
   integrity sha512-ZYfpVLULm67K7CaaGP7DmjyeMY4naxsbTy+syVVxT6QHI1Ww8XbJjmr9fDckrhq44WzCrcC5kH3zGpdusxwwqg==
 
-element-closest@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/element-closest/-/element-closest-2.0.2.tgz#72a740a107453382e28df9ce5dbb5a8df0f966ec"
-  integrity sha1-cqdAoQdFM4LijfnOXbtajfD5Zuw=
+element-closest@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/element-closest/-/element-closest-3.0.2.tgz#3814a69a84f30e48e63eaf57341f4dbf4227d2aa"
+  integrity sha512-JxKQiJKX0Zr5Q2/bCaTx8P+UbfyMET1OQd61qu5xQFeWr1km3fGaxelSJtnfT27XQ5Uoztn2yIyeamAc/VX13g==
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -5341,7 +5341,7 @@ ember-cli-babel@^6.12.0, ember-cli-babel@^6.16.0, ember-cli-babel@^6.3.0, ember-
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
 
-ember-cli-babel@^7.0.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.11.1, ember-cli-babel@^7.12.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.20.5, ember-cli-babel@^7.26.10, ember-cli-babel@^7.26.2, ember-cli-babel@^7.26.6, ember-cli-babel@^7.7.3:
+ember-cli-babel@^7.0.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.11.1, ember-cli-babel@^7.12.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.20.5, ember-cli-babel@^7.26.10, ember-cli-babel@^7.26.2, ember-cli-babel@^7.26.6, ember-cli-babel@^7.4.1, ember-cli-babel@^7.7.3:
   version "7.26.11"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.26.11.tgz#50da0fe4dcd99aada499843940fec75076249a9f"
   integrity sha512-JJYeYjiz/JTn34q7F5DSOjkkZqy8qwFOOxXfE6pe9yEJqWGu4qErKxlz8I22JoVEQ/aBUO+OcKTpmctvykM9YA==
@@ -5490,15 +5490,15 @@ ember-cli-deploy@^1.0.2:
     rsvp "^3.3.3"
     silent-error "^1.0.0"
 
-ember-cli-element-closest-polyfill@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-element-closest-polyfill/-/ember-cli-element-closest-polyfill-0.0.1.tgz#cc4d09120acc8a655e77a288ce929d4691d2c80a"
-  integrity sha512-LBYICCsG1WIhsieUoZndW5LQyuz7DtnXYgGrH9APuwR7qYsEdXJt5Uv6Pvu211GY2EnuNtJ7V24ZhFGCFu1dQg==
+ember-cli-element-closest-polyfill@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-element-closest-polyfill/-/ember-cli-element-closest-polyfill-0.0.2.tgz#e53105735e9833c332aceff574c828e7e6658613"
+  integrity sha512-e9w1KCRUKorxZUyi50MhkHvf+7YihSk1zmu0eWeeTvtMfrKmrf9n8NQG57dxxgWBz+en1qAnEmsxIJcJs6bFRQ==
   dependencies:
     broccoli-funnel "^2.0.1"
     caniuse-api "^3.0.0"
-    element-closest "^2.0.2"
-    ember-cli-babel "^6.16.0"
+    element-closest "^3.0.2"
+    ember-cli-babel "^7.4.1"
     fastboot-transform "^0.1.3"
 
 ember-cli-eslint@^5.1.0:
