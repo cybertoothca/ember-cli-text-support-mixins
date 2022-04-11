@@ -6,6 +6,11 @@
 
 Ember.TextSupport enhancements including a `{{input-text}}` and `{{text-area}}` component.
 
+## Compatibility
+
+- Ember.js v2.18 or above
+- Ember CLI v2.13 or above
+
 ## Installation
 
 The following command will install this add-on:
