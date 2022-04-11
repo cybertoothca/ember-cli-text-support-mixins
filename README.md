@@ -1,59 +1,30 @@
 # ember-cli-text-support-mixins
 
-[![npm version](http://badge.fury.io/js/ember-cli-text-support-mixins.svg)](http://badge.fury.io/js/ember-cli-text-support-mixins) ![downloads](https://img.shields.io/npm/dy/ember-cli-text-support-mixins.svg) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins) 
+[![npm version](http://badge.fury.io/js/ember-cli-text-support-mixins.svg)](http://badge.fury.io/js/ember-cli-text-support-mixins) ![downloads](https://img.shields.io/npm/dy/ember-cli-text-support-mixins.svg) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-text-support-mixins)
 
-![Dependencies](http://david-dm.org/cybertoothca/ember-cli-text-support-mixins.svg) [![ember-observer-badge](http://emberobserver.com/badges/ember-cli-text-support-mixins.svg)](http://emberobserver.com/addons/ember-cli-text-support-mixins) [![License](http://img.shields.io/npm/l/ember-cli-text-support-mixins.svg)](LICENSE.md)
+[![ember-observer-badge](http://emberobserver.com/badges/ember-cli-text-support-mixins.svg)](http://emberobserver.com/addons/ember-cli-text-support-mixins) [![License](http://img.shields.io/npm/l/ember-cli-text-support-mixins.svg)](LICENSE.md)
 
 Ember.TextSupport enhancements including a `{{input-text}}` and `{{text-area}}` component.
-
-## Built With
-
-[![ember-cli-2.18.2](https://img.shields.io/badge/ember--cli-2.18.2-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-
-## Tested Against
-
-[![ember-lts-2.4](https://img.shields.io/badge/ember--try-ember--lts--2.4-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-[![ember-lts-2.8](https://img.shields.io/badge/ember--try-ember--lts--2.8-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-[![ember-lts-2.12](https://img.shields.io/badge/ember--try-ember--lts--2.12-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-[![ember-lts-2.16](https://img.shields.io/badge/ember--try-ember--lts--2.16-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-
-[![ember-release-2.18](https://img.shields.io/badge/ember--try-ember--release--2.18-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-[![ember-default](https://img.shields.io/badge/ember--try-ember--default-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-[![ember-beta](https://img.shields.io/badge/ember--try-ember--beta-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-[![ember-canary](https://img.shields.io/badge/ember--try-ember--canary-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-text-support-mixins)
-
-## Demo & Documentation
-
-The demonstration web application can be found here:
-[https://ember-cli-text-support-mixins.cybertooth.io/](https://ember-cli-text-support-mixins.cybertooth.io/). 
 
 ## Installation
 
 The following command will install this add-on:
 
-```
+```bash
 ember install ember-cli-text-support-mixins
 ```
 
-### Upgrading
+### Demo & Documentation
 
-When working through the Ember upgrade process, I recommend
-invoking the `ember install ember-cli-text-support-mixins` command once
-you are done to get the latest version of the add-on.
-
-This will likely update the dependencies listed above.
-
-### Bower & JQuery
-
-This add-on does not depend on bower libraries when installed in your application or add-on.
-
-This add-on no longer depends on JQuery.  
+The demonstration web application can be found here:
+[https://ember-cli-text-support-mixins.cybertooth.io/](https://ember-cli-text-support-mixins.cybertooth.io/).
+[Short description of the addon.]
 
 ### Dependencies
 
 #### `ember-cli-element-closest-polyfill`
 
-Polyfill terrible M$ browsers with the `Element.closest()` & `Element.matches()` using 
+Polyfill terrible M$ browsers with the `Element.closest()` & `Element.matches()` using
 [`ember-cli-element-closest-polyfill`](https://github.com/miguelcobain/ember-cli-element-closest-polyfill).
 
 #### `keyevent`
@@ -63,29 +34,35 @@ by yarn and `ember-cli-node-assets`.
 
 ---
 
-# Contributing
+## Contributing
 
-## Setup
+### Installation
 
-* `git clone git@github.com:cybertoothca/ember-cli-text-support-mixins.git`
-* `yarn`
+- `git clone git@github.com:cybertoothca/ember-cli-text-support-mixins.git`
+- `cd ember-cli-text-support-mixins`
+- `yarn install`
 
-## Running The Dummy Application
+### Linting
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+- `yarn lint:js`
+- `yarn lint:js --fix`
 
-## Running Add-on Tests
+### Running tests
 
-* `npm test` (Runs `ember try:testall` to test your add-on against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+- `ember test` – Runs the test suite on the current Ember version
+- `ember test --server` – Runs the test suite in "watch mode"
+- `yarn test` – Runs `ember try:each` to test your addon against multiple Ember versions
 
-## Building The Add-on
+### Running the dummy application
 
-* `ember build`
+- `ember serve`
+- Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
 
 # Linking This Add-on For Local Testing
 
@@ -113,7 +90,7 @@ $ yarn unlink
 
 # Deploying The Dummy Application
 
-Make sure your `~/.aws/credentials` file has a profile named _cybertooth_ 
+Make sure your `~/.aws/credentials` file has a profile named _cybertooth_
 with a valid key and secret,
 
 ```text
@@ -126,7 +103,7 @@ Deploy by invoking the following command: `ember deploy production`
 
 Confirm your changes are showing up at: https://ember-cli-text-support-mixins.cybertooth.io/
 
-You may need to go into AWS CloudFront to expire the index.html file before the site 
+You may need to go into AWS CloudFront to expire the index.html file before the site
 changes are picked up (see [issue](https://github.com/cybertoothca/ember-cli-text-support-mixins/issues/29)).
 
 # Releasing & Publishing To NPM
