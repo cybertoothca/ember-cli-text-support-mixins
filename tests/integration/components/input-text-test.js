@@ -1,11 +1,9 @@
 import { setupRenderingTest } from "ember-qunit";
 import hbs from "htmlbars-inline-precompile";
-/* global jQuery */
 /* global KeyEvent */
 import { module, skip, test } from "qunit";
 
-import EmberObject from "@ember/object";
-import { render, triggerEvent } from "@ember/test-helpers";
+import { render, triggerKeyEvent } from "@ember/test-helpers";
 import { isPresent } from "@ember/utils";
 
 module("Integration | Component | input text", function (hooks) {
@@ -18,23 +16,20 @@ module("Integration | Component | input text", function (hooks) {
 
   skip("when form is not submitted by pressing enter", async function (assert) {
     let formSubmitted = false;
-    this.set(
-      "_form",
-      EmberObject.create({
-        onsubmit() {
-          formSubmitted = true;
-        },
-      })
+
+    this.set("formAction", () => {
+      formSubmitted = true;
+    });
+
+    await render(
+      hbs`<form onsubmit={{action this.formAction}}>
+            {{input-text enterSubmitsForm?=true }}
+          </form>`
     );
-    this.render(hbs`{{input-text enterWillSubmitForm?=true _form=_form}}`);
 
     assert.notOk(formSubmitted);
 
-    const event = jQuery.Event("keydown");
-    event.which = event.keyCode = KeyEvent.DOM_VK_ENTER;
-    event.ctrlKey = false;
-    await triggerEvent("input", "focus");
-    this.$("input").trigger(event);
+    await triggerKeyEvent("input", "keydown", KeyEvent.DOM_VK_ENTER);
 
     assert.ok(formSubmitted);
   });
@@ -42,24 +37,23 @@ module("Integration | Component | input text", function (hooks) {
   test("when form cannot be found it does not ctrl+enter submit or invoke any before/after hooks", async function (assert) {
     let wasCalled = false;
     let formSubmitted = false;
-    this.set("beforeCtrlEnterSubmitAction", function (event, component, $form) {
+    this.set("beforeSubmitAction", function (event, component, $form) {
       wasCalled = true;
       assert.ok(isPresent(event));
       assert.ok(isPresent(component));
       assert.ok(isPresent($form));
     });
+
     await render(
-      hbs`{{input-text ctrlEnterSubmitsForm?=true beforeCtrlEnterSubmitAction=beforeCtrlEnterSubmitAction}}`
+      hbs`{{input-text ctrlEnterSubmitsForm?=true beforeSubmit=this.beforeSubmitAction}}`
     );
 
     assert.notOk(wasCalled);
     assert.notOk(formSubmitted);
 
-    const event = jQuery.Event("keydown");
-    event.which = event.keyCode = KeyEvent.DOM_VK_ENTER;
-    event.ctrlKey = true;
-    await triggerEvent("input", "focus");
-    this.$("input").trigger(event);
+    await triggerKeyEvent("input", "keydown", KeyEvent.DOM_VK_ENTER, {
+      ctrlKey: true,
+    });
 
     assert.notOk(wasCalled);
     assert.notOk(formSubmitted);
@@ -68,32 +62,30 @@ module("Integration | Component | input text", function (hooks) {
   skip("when hooking into the before ctrl-enter-submits-form hook", async function (assert) {
     let wasCalled = false;
     let formSubmitted = false;
-    this.set("beforeCtrlEnterSubmitAction", function (event, component, $form) {
+
+    this.set("beforeSubmitAction", function (event, component, $form) {
       wasCalled = true;
       assert.ok(isPresent(event));
       assert.ok(isPresent(component));
       assert.ok(isPresent($form));
     });
-    this.set(
-      "_form",
-      EmberObject.create({
-        onsubmit() {
-          formSubmitted = true;
-        },
-      })
-    );
-    this.render(
-      hbs`{{input-text ctrlEnterSubmitsForm?=true beforeCtrlEnterSubmitAction=beforeCtrlEnterSubmitAction _form=_form}}`
+
+    this.set("formAction", () => {
+      formSubmitted = true;
+    });
+
+    await render(
+      hbs`<form onsubmit={{action this.formAction}}>
+            {{input-text ctrlEnterSubmitsForm?=true beforeSubmit=this.beforeSubmitAction }}
+          </form>`
     );
 
     assert.notOk(wasCalled);
     assert.notOk(formSubmitted);
 
-    const event = jQuery.Event("keydown");
-    event.which = event.keyCode = KeyEvent.DOM_VK_ENTER;
-    event.ctrlKey = true;
-    await triggerEvent("input", "focus");
-    this.$("input").trigger(event);
+    await triggerKeyEvent("input", "keydown", KeyEvent.DOM_VK_ENTER, {
+      ctrlKey: true,
+    });
 
     assert.ok(wasCalled);
     assert.ok(formSubmitted);
@@ -108,26 +100,23 @@ module("Integration | Component | input text", function (hooks) {
       assert.ok(isPresent(component));
       assert.ok(isPresent($form));
     });
-    this.set(
-      "_form",
-      EmberObject.create({
-        onsubmit() {
-          formSubmitted = true;
-        },
-      })
-    );
-    this.render(
-      hbs`{{input-text ctrlEnterSubmitsForm?=true afterCtrlEnterSubmitAction=afterCtrlEnterSubmitAction _form=_form}}`
+
+    this.set("formAction", () => {
+      formSubmitted = true;
+    });
+
+    await render(
+      hbs`<form onsubmit={{action this.formAction}}>
+            {{input-text ctrlEnterSubmitsForm?=true afterCtrlEnterSubmitAction=this.afterCtrlEnterSubmitAction}}
+          </form>`
     );
 
     assert.notOk(wasCalled);
     assert.notOk(formSubmitted);
 
-    const event = jQuery.Event("keydown");
-    event.which = event.keyCode = KeyEvent.DOM_VK_ENTER;
-    event.ctrlKey = true;
-    await triggerEvent("input", "focus");
-    this.$("input").trigger(event);
+    await triggerKeyEvent("input", "keydown", KeyEvent.DOM_VK_ENTER, {
+      ctrlKey: true,
+    });
 
     assert.ok(wasCalled);
     assert.ok(formSubmitted);
@@ -146,9 +135,7 @@ module("Integration | Component | input text", function (hooks) {
 
     assert.notOk(wasCalled);
 
-    const event = jQuery.Event("keyup");
-    event.which = event.keyCode = KeyEvent.DOM_VK_ESCAPE;
-    this.$("input").trigger(event);
+    await triggerKeyEvent("input", "keyup", KeyEvent.DOM_VK_ESCAPE);
 
     assert.ok(wasCalled);
   });
@@ -166,9 +153,7 @@ module("Integration | Component | input text", function (hooks) {
 
     assert.notOk(wasCalled);
 
-    const event = jQuery.Event("keyup");
-    event.which = event.keyCode = KeyEvent.DOM_VK_ESCAPE;
-    this.$("input").trigger(event);
+    await triggerKeyEvent("input", "keyup", KeyEvent.DOM_VK_ESCAPE);
 
     assert.ok(wasCalled);
   });

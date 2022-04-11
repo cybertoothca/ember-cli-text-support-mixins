@@ -13,7 +13,7 @@ module("Integration | Component | text area", function (hooks) {
   });
 
   // test('when rendered with block the .text-area class is present', function (assert) {
-  //   this.render(hbs`
+  //   await render(hbs`
   //     {{#text-area}}Block Style{{/text-area}}
   //   `);
   //   assert.ok(this.$('textarea').hasClass('text-area'));
