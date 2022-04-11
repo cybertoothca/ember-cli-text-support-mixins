@@ -39,18 +39,18 @@ export default Mixin.create({
    */
   cancel(event) {
     this._super(...arguments);
-    if (this.get('escapeKeyClears?')) {
+    if (this['escapeKeyClears?']) {
       // fire the before-clear action
-      if (isPresent(this.get('beforeClearAction'))) {
-        this.get('beforeClearAction')(event, this);
+      if (isPresent(this.beforeClearAction)) {
+        this.beforeClearAction(event, this);
       }
 
       this.element.value = '';  // for Ember-2.4 & Ember-2.8
       trySet(this, 'value', '');
 
       // fire the after-clear action
-      if (isPresent(this.get('afterClearAction'))) {
-        this.get('afterClearAction')(event, this);
+      if (isPresent(this.afterClearAction)) {
+        this.afterClearAction(event, this);
       }
     }
   }

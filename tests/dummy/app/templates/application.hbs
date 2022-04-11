@@ -17,8 +17,10 @@
 <section class="my-3">
   <div class="container">
     {{badge-fury-io appName=(read-config "APP.name")}}
-    {{badge-built-with appName=(read-config "APP.name") emberCliVersion="2.18.2"}}
-    {{badge-install-command appName=(read-config "APP.name") version=(app-version versionOnly=true)}}
+    {{badge-install-command
+      appName=(read-config "APP.name")
+      version=(app-version versionOnly=true)
+    }}
   </div>
 </section>
 

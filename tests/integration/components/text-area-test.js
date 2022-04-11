@@ -1,19 +1,22 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { setupRenderingTest } from "ember-qunit";
+import hbs from "htmlbars-inline-precompile";
+import { module, test } from "qunit";
 
-moduleForComponent('text-area', 'Integration | Component | text area', {
-  integration: true
+import { render } from "@ember/test-helpers";
+
+module("Integration | Component | text area", function (hooks) {
+  setupRenderingTest(hooks);
+
+  test("when rendered without block the .text-area class is present", async function (assert) {
+    await render(hbs`{{text-area}}`);
+    assert.dom("textarea").hasClass("text-area");
+  });
+
+  // test('when rendered with block the .text-area class is present', function (assert) {
+  //   this.render(hbs`
+  //     {{#text-area}}Block Style{{/text-area}}
+  //   `);
+  //   assert.ok(this.$('textarea').hasClass('text-area'));
+  //   assert.equal(this.$('textarea').val(), 'Block Style');
+  // });
 });
-
-test('when rendered without block the .text-area class is present', function (assert) {
-  this.render(hbs`{{text-area}}`);
-  assert.ok(this.$('textarea').hasClass('text-area'));
-});
-
-// test('when rendered with block the .text-area class is present', function (assert) {
-//   this.render(hbs`
-//     {{#text-area}}Block Style{{/text-area}}
-//   `);
-//   assert.ok(this.$('textarea').hasClass('text-area'));
-//   assert.equal(this.$('textarea').val(), 'Block Style');
-// });

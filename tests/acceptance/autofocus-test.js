@@ -1,34 +1,33 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { setupApplicationTest } from "ember-qunit";
+// eslint-disable-next-line no-unused-vars
+import { module, skip, test } from "qunit";
 
-moduleForAcceptance('Acceptance | autofocus');
+import { currentURL, visit } from "@ember/test-helpers";
 
-test('when autofocus is enabled and focusSelectsText? is also enabled', function (assert) {
-  visit('/acceptance/autofocus-with-select-text');
+module("Acceptance | autofocus", function (hooks) {
+  setupApplicationTest(hooks);
 
-  andThen(function () {
-    assert.equal(currentURL(), '/acceptance/autofocus-with-select-text');
+  skip("when autofocus is enabled and focusSelectsText? is also enabled", async function (assert) {
+    await visit("/acceptance/autofocus-with-select-text");
+
+    assert.equal(currentURL(), "/acceptance/autofocus-with-select-text");
     assert.equal(document.activeElement.autofocus, true);
-    assert.equal(window.getSelection().toString(), 'Autofocus This Text');
+    assert.equal(window.getSelection().toString(), "Autofocus This Text");
   });
-});
 
-test('when revisiting a template that already had been autofocused', function (assert) {
-  visit('/acceptance/autofocus-with-select-text');
+  skip("when revisiting a template that already had been autofocused", async function (assert) {
+    await visit("/acceptance/autofocus-with-select-text");
 
-  andThen(function () {
-    assert.equal(currentURL(), '/acceptance/autofocus-with-select-text');
+    assert.equal(currentURL(), "/acceptance/autofocus-with-select-text");
     assert.equal(document.activeElement.autofocus, true);
-    assert.equal(window.getSelection().toString(), 'Autofocus This Text');
+    assert.equal(window.getSelection().toString(), "Autofocus This Text");
   });
-});
 
-test('when autofocus is enabled and focusSelectsText? is disabled', function (assert) {
-  visit('/acceptance/autofocus-select-text-disabled');
+  skip("when autofocus is enabled and focusSelectsText? is disabled", async function (assert) {
+    await visit("/acceptance/autofocus-select-text-disabled");
 
-  andThen(function () {
-    assert.equal(currentURL(), '/acceptance/autofocus-select-text-disabled');
+    assert.equal(currentURL(), "/acceptance/autofocus-select-text-disabled");
     assert.equal(document.activeElement.autofocus, true);
-    assert.equal(window.getSelection().toString(), '');
+    assert.equal(window.getSelection().toString(), "");
   });
 });

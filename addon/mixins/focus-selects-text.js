@@ -11,7 +11,7 @@ export default Mixin.create({
    */
   focusIn(/*event*/) {
     this._super(...arguments);
-    if (this.get('focusSelectsText?')) {
+    if (this['focusSelectsText?']) {
       // using a runloop to make sure textarea text can be selected in webkit/safari
       // @see https://stackoverflow.com/a/6201757/545137
       later(this, () => {

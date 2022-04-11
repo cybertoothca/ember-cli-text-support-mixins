@@ -1,32 +1,30 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { setupApplicationTest } from "ember-qunit";
+import { module, skip, test } from "qunit";
 
-moduleForAcceptance('Acceptance | focus selects text');
+import { currentURL, focus, visit } from "@ember/test-helpers";
 
-test('when focusSelectsText? is false or turned off', function (assert) {
-  visit('/acceptance/focus-selects-text');
+module("Acceptance | focus selects text", function (hooks) {
+  setupApplicationTest(hooks);
 
-  andThen(function () {
-    assert.equal(currentURL(), '/acceptance/focus-selects-text');
-    assert.equal(find('input.select-enabled').val(), 'Select This Text');
-    assert.equal(window.getSelection().toString(), '');
-    triggerEvent('input.select-enabled', 'focus');
-    andThen(() => {
-      assert.equal(window.getSelection().toString(), 'Select This Text');
-    });
+  skip("when focusSelectsText? is enabled", async function (assert) {
+    await visit("/acceptance/focus-selects-text");
+
+    assert.equal(currentURL(), "/acceptance/focus-selects-text");
+    assert.dom("input.select-enabled").hasValue("Select This Text");
+    assert.equal(window.getSelection().toString(), "");
+    await await focus("input.select-enabled");
+    assert.equal(window.getSelection().toString(), "Select This Text");
   });
-});
 
-test('when focusSelectsText? is false or turned off', function (assert) {
-  visit('/acceptance/focus-selects-text');
+  test("when focusSelectsText? is false or turned off", async function (assert) {
+    await visit("/acceptance/focus-selects-text");
 
-  andThen(function () {
-    assert.equal(currentURL(), '/acceptance/focus-selects-text');
-    assert.equal(find('input.select-disabled').val(), 'Text Will Not Select On Focus');
-    assert.equal(window.getSelection().toString(), '');
-    triggerEvent('input.select-disabled', 'focus');
-    andThen(() => {
-      assert.equal(window.getSelection().toString(), '');
-    });
+    assert.equal(currentURL(), "/acceptance/focus-selects-text");
+    assert
+      .dom("input.select-disabled")
+      .hasValue("Text Will Not Select On Focus");
+    assert.equal(window.getSelection().toString(), "");
+    await await focus("input.select-disabled");
+    assert.equal(window.getSelection().toString(), "");
   });
 });
