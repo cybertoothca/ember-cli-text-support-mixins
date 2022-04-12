@@ -1,6 +1,10 @@
 <section class="my-2">
   <div class="container">
-    <CtNavbar @appLabel="Text Support Mixins" @appName={{model.appName}} @class="bg-dark navbar-expand-md navbar-dark shadow rounded">
+    <CtNavbar
+      @appLabel="Text Support Mixins"
+      @appName={{@model.appName}}
+      @class="bg-dark navbar-expand-md navbar-dark shadow rounded"
+    >
       <li class="nav-item">
         <LinkTo @route="demo.index" class="nav-link">
           {{fa-icon "tv" size="2x"}}
@@ -13,7 +17,10 @@
 <section class="my-3">
   <div class="container">
     <BadgeFuryIo @appName={{read-config "APP.name"}} />
-    <BadgeInstallCommand @appName={{read-config "APP.name"}} @version={{app-version versionOnly=true}} />
+    <BadgeInstallCommand
+      @appName={{read-config "APP.name"}}
+      @version={{app-version versionOnly=true}}
+    />
   </div>
 </section>
 
