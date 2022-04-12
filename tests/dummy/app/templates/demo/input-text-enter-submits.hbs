@@ -10,13 +10,7 @@
     <label for="js-text-submit-with-on">
       <kbd>ENTER</kbd> Submits Turned On (DEFAULT Behaviour)
     </label>
-    {{input-text
-      aria-describedby="js-text-submit-with-on-helpblock"
-      autofocus=true
-      class="form-control"
-      id="js-text-submit-with-on"
-      placeholder="Press ENTER To Submit"
-    }}
+    <InputText @aria-describedby="js-text-submit-with-on-helpblock" @autofocus={{true}} @class="form-control" @id="js-text-submit-with-on" @placeholder="Press ENTER To Submit" />
     <small id="js-text-submit-with-on-helpblock" class="form-text text-muted">
       <kbd>ENTER</kbd> will submit form :
       <code>\{{input-text ...}}</code>
@@ -30,13 +24,7 @@
     <label for="js-text-submit-with-on-off">
       <kbd>ENTER</kbd> Submits Turned <span class="bg-warning px-1 text-dark">OFF</span>
     </label>
-    {{input-text
-      aria-describedby="js-text-submit-with-on-off-helpblock"
-      class="form-control"
-      enterSubmitsForm?=false
-      id="js-text-submit-with-on-off"
-      placeholder="Pressing ENTER Will Not Submit"
-    }}
+    <InputText @aria-describedby="js-text-submit-with-on-off-helpblock" @class="form-control" @enterSubmitsForm?={{false}} @id="js-text-submit-with-on-off" @placeholder="Pressing ENTER Will Not Submit" />
     <small id="js-text-submit-with-on-off-helpblock" class="form-text text-muted">
       <kbd>ENTER</kbd> will <span class="bg-warning px-1 text-dark">NOT</span> submit form :
       <code>\{{input-text enterSubmitsForm?=false ...}}</code>
@@ -56,12 +44,7 @@
     <label for="js-text-onsubmit">
       <kbd>ENTER</kbd> Submits Turned On (DEFAULT Behaviour)
     </label>
-    {{input-text
-      aria-describedby="js-text-onsubmit-helpblock"
-      class="form-control"
-      id="js-text-onsubmit"
-      placeholder="Press ENTER To Submit"
-    }}
+    <InputText @aria-describedby="js-text-onsubmit-helpblock" @class="form-control" @id="js-text-onsubmit" @placeholder="Press ENTER To Submit" />
     <small id="js-text-onsubmit-helpblock" class="form-text text-muted">
       <kbd>ENTER</kbd> will submit form :
       <code>\{{input-text ...}}</code>
@@ -76,13 +59,7 @@
     <label for="js-text-onsubmit-off">
       <kbd>ENTER</kbd> Submits Turned <span class="bg-warning px-1 text-dark">OFF</span>
     </label>
-    {{input-text
-      aria-describedby="js-text-onsubmit-off-helpblock"
-      class="form-control"
-      enterSubmitsForm?=false
-      id="js-text-onsubmit-off"
-      placeholder="Pressing ENTER Will Not Submit"
-    }}
+    <InputText @aria-describedby="js-text-onsubmit-off-helpblock" @class="form-control" @enterSubmitsForm?={{false}} @id="js-text-onsubmit-off" @placeholder="Pressing ENTER Will Not Submit" />
     <small id="js-text-onsubmit-off-helpblock" class="form-text text-muted">
       <kbd>ENTER</kbd> will <span class="bg-warning px-1 text-dark">NOT</span> submit form :
       <code>\{{input-text enterSubmitsForm?=false ...}}</code>
