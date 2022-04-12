@@ -47,7 +47,7 @@
   "devDependencies": {
     "@ember/jquery": "^2.0.0",
     "@ember/optional-features": "^2.0.0",
-    "@fortawesome/ember-fontawesome": "^0.1.8",
+    "@fortawesome/ember-fontawesome": "^0.3.2",
     "@fortawesome/free-brands-svg-icons": "^5.5.0",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "@glimmer/component": "^1.0.0",
