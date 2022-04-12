@@ -10,3 +10,7 @@ updates:
       - nadnoslen
     labels:
       - dependencies
+    ignore:
+      - dependency-name: ember-cli
+      - dependency-name: ember-data
+      - dependency-name: ember-source

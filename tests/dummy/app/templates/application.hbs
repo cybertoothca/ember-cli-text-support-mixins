@@ -1,26 +1,26 @@
 <section class="my-2">
   <div class="container">
-    {{#ct-navbar
-      appLabel="Text Support Mixins"
-      appName=model.appName
-      class="bg-dark navbar-expand-md navbar-dark shadow rounded"
-    }}
+    <CtNavbar
+      @appLabel="Text Support Mixins"
+      @appName={{@model.appName}}
+      @class="bg-dark navbar-expand-md navbar-dark shadow rounded"
+    >
       <li class="nav-item">
-        {{#link-to "demo.index" class="nav-link"}}
+        <LinkTo @route="demo.index" class="nav-link">
           {{fa-icon "tv" size="2x"}}
-        {{/link-to}}
+        </LinkTo>
       </li>
-    {{/ct-navbar}}
+    </CtNavbar>
   </div>
 </section>
 
 <section class="my-3">
   <div class="container">
-    {{badge-fury-io appName=(read-config "APP.name")}}
-    {{badge-install-command
-      appName=(read-config "APP.name")
-      version=(app-version versionOnly=true)
-    }}
+    <BadgeFuryIo @appName={{read-config "APP.name"}} />
+    <BadgeInstallCommand
+      @appName={{read-config "APP.name"}}
+      @version={{app-version versionOnly=true}}
+    />
   </div>
 </section>
 
@@ -28,6 +28,6 @@
 
 <section class="bg-dark mt-5 text-light">
   <div class="container">
-    {{ct-footer class="py-5"}}
+    <CtFooter @class="py-5" />
   </div>
 </section>

@@ -1,94 +1,68 @@
 <h3>
   Triggered Via
+  <br />
   <code class="small">
-    {{fa-icon "angle-left"}}form \{{action "withSubmit" on="submit"}}{{fa-icon "angle-right"}} ...
+    {{fa-icon "angle-left"}}form
+    \{{on "submit" this.withSubmit}}{{fa-icon "angle-right"}}
+    ...
   </code>
 </h3>
 
-<form {{action "withSubmit" on="submit"}}>
+<form {{on "submit" this.withSubmit}}>
   <div class="form-group">
     <label for="js-text-submit-with-on">
-      <kbd>CTRL+ENTER</kbd> Submits Turned On
+      <kbd>CTRL+ENTER</kbd>
+      Submits Turned On
     </label>
-    {{text-area
-      aria-describedby="js-text-submit-with-on-helpblock"
-      autofocus=true
-      class="form-control"
-      ctrlEnterSubmitsForm?=true
-      id="js-text-submit-with-on"
-      placeholder="Press CTRL+ENTER To Submit"
-    }}
+    <TextArea
+      @aria-describedby="js-text-submit-with-on-helpblock"
+      @autofocus={{true}}
+      @class="form-control"
+      @ctrlEnterSubmitsForm?={{true}}
+      @id="js-text-submit-with-on"
+      @placeholder="Press CTRL+ENTER To Submit"
+    />
     <small id="js-text-submit-with-on-helpblock" class="form-text text-muted">
-      <kbd>CTRL+ENTER</kbd> will submit form :
-      <code>\{{text-area ctrlEnterSubmitsForm?=true ...}}</code>
+      <kbd>CTRL+ENTER</kbd>
+      will submit form :
+      <code>
+        {{fa-icon "angle-left"}}TextArea @ctrlEnterSubmitsForm?=true ... /{{fa-icon
+          "angle-right"
+        }}
+      </code>
     </small>
   </div>
 </form>
 
-<hr/>
+<hr />
 
-<form {{action "withSubmit" on="submit"}}>
+<form {{on "submit" this.withSubmit}}>
   <div class="form-group">
     <label for="js-text-submit-with-on-off">
-      <kbd>CTRL+ENTER</kbd> Submits Turned <span class="bg-warning px-1 text-dark">OFF</span> (DEFAULT Behaviour)
+      <kbd>CTRL+ENTER</kbd>
+      Submits Turned
+      <span class="bg-warning px-1 text-dark">OFF</span>
+      (DEFAULT Behaviour)
     </label>
-    {{text-area
-      aria-describedby="js-text-submit-with-on-off-helpblock"
-      class="form-control"
-      ctrlEnterSubmitsForm?=false
-      id="js-text-submit-with-on-off"
-      placeholder="Pressing CTRL+ENTER Will Not Submit"
-    }}
-    <small id="js-text-submit-with-on-off-helpblock" class="form-text text-muted">
-      <kbd>CTRL+ENTER</kbd> will <span class="bg-warning px-1 text-dark">NOT</span> submit form :
-      <code>\{{text-area ctrlEnterSubmitsForm?=false enterSubmitsForm?=false ...}}</code>
-    </small>
-  </div>
-</form>
-
-<h3 class="mt-5">
-  Triggered Via
-  <code class="small">
-    {{fa-icon "angle-left"}}form onsubmit=\{{action "withOnSubmit"}}{{fa-icon "angle-right"}} ...
-  </code>
-</h3>
-
-<form onsubmit={{action "withOnSubmit"}}>
-  <div class="form-group">
-    <label for="js-text-onsubmit">
-      <kbd>CTRL+ENTER</kbd> Submits Turned On
-    </label>
-    {{text-area
-      aria-describedby="js-text-onsubmit-helpblock"
-      class="form-control"
-      ctrlEnterSubmitsForm?=true
-      id="js-text-onsubmit"
-      placeholder="Press CTRL+ENTER To Submit"
-    }}
-    <small id="js-text-onsubmit-helpblock" class="form-text text-muted">
-      <kbd>CTRL+ENTER</kbd> will submit form :
-      <code>\{{text-area ctrlEnterSubmitsForm?=true ...}}</code>
-    </small>
-  </div>
-</form>
-
-<hr/>
-
-<form onsubmit={{action "withOnSubmit"}}>
-  <div class="form-group">
-    <label for="js-text-onsubmit-off">
-      <kbd>CTRL+ENTER</kbd> Submits Turned <span class="bg-warning px-1 text-dark">OFF</span> (DEFAULT Behaviour)
-    </label>
-    {{text-area
-      aria-describedby="js-text-onsubmit-off-helpblock"
-      class="form-control"
-      ctrlEnterSubmitsForm?=false
-      id="js-text-onsubmit-off"
-      placeholder="Pressing CTRL+ENTER Will Not Submit"
-    }}
-    <small id="js-text-onsubmit-off-helpblock" class="form-text text-muted">
-      <kbd>CTRL+ENTER</kbd> will <span class="bg-warning px-1 text-dark">NOT</span> submit form :
-      <code>\{{text-area ctrlEnterSubmitsForm?=false ...}}</code>
+    <TextArea
+      @aria-describedby="js-text-submit-with-on-off-helpblock"
+      @class="form-control"
+      @ctrlEnterSubmitsForm?={{false}}
+      @id="js-text-submit-with-on-off"
+      @placeholder="Pressing CTRL+ENTER Will Not Submit"
+    />
+    <small
+      id="js-text-submit-with-on-off-helpblock"
+      class="form-text text-muted"
+    >
+      <kbd>CTRL+ENTER</kbd>
+      will
+      <span class="bg-warning px-1 text-dark">NOT</span>
+      submit form :
+      <code>
+        {{fa-icon "angle-left"}}TextArea @ctrlEnterSubmitsForm?=false
+        @enterSubmitsForm?=false /{{fa-icon "angle-right"}}
+      </code>
     </small>
   </div>
 </form>

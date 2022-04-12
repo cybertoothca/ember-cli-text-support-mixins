@@ -1,13 +1,7 @@
 <div class="form">
   <div class="form-group">
     <label for="js-text-autofocus">Autofocus</label>
-    {{input-text
-      aria-describedby="js-text-autofocus-helpblock"
-      autofocus=true
-      class="form-control"
-      id="js-text-autofocus"
-      placeholder="Cursor Focused On This Input"
-    }}
+    <InputText @aria-describedby="js-text-autofocus-helpblock" @autofocus={{true}} @class="form-control" @id="js-text-autofocus" @placeholder="Cursor Focused On This Input" />
     <small id="js-text-autofocus-helpblock" class="form-text text-muted">
       Autofocus will work across Ember transitions: <code>\{{input-text autofocus=true ...}}</code>
     </small>

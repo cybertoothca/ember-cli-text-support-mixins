@@ -1,3 +1,3 @@
-import InputTextEnterSubmits from './input-text-enter-submits';
+import InputTextEnterSubmits from "./input-text-enter-submits";
 
-export default InputTextEnterSubmits.extend({});
+export default class TextAreaCtrlEnterSubmitsController extends InputTextEnterSubmits {}

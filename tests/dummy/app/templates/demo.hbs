@@ -1,5 +1,5 @@
-{{#section-demo class="my-3" as |section|}}
-  {{#section.list-group}}
+<SectionDemo @class="my-3" as |section|>
+  <section.list-group>
     <div class="list-group-item list-group-item-dark">
       <div class="d-flex w-100 justify-content-between">
         <h4 class="mb-1">Textbox</h4>
@@ -7,21 +7,21 @@
       </div>
     </div>
 
-    {{#link-to "demo.index" class="list-group-item list-group-item-action"}}
+    <LinkTo @route="demo.index" class="list-group-item list-group-item-action">
       Autofocus
-    {{/link-to}}
-    {{#link-to "demo.input-text-select-text" class="list-group-item list-group-item-action"}}
+    </LinkTo>
+    <LinkTo @route="demo.input-text-select-text" class="list-group-item list-group-item-action">
       Select Text
-    {{/link-to}}
-    {{#link-to "demo.input-text-escape-clears" class="list-group-item list-group-item-action"}}
+    </LinkTo>
+    <LinkTo @route="demo.input-text-escape-clears" class="list-group-item list-group-item-action">
       <kbd class="shadow">ESC</kbd> Clears
-    {{/link-to}}
-    {{#link-to "demo.input-text-enter-submits" class="list-group-item list-group-item-action"}}
+    </LinkTo>
+    <LinkTo @route="demo.input-text-enter-submits" class="list-group-item list-group-item-action">
       <kbd class="shadow">ENTER</kbd> Submits
-    {{/link-to}}
-    {{#link-to "demo.input-text-ctrl-enter-submits" class="list-group-item list-group-item-action"}}
+    </LinkTo>
+    <LinkTo @route="demo.input-text-ctrl-enter-submits" class="list-group-item list-group-item-action">
       <kbd class="shadow">CTRL+ENTER</kbd> Submits
-    {{/link-to}}
+    </LinkTo>
 
     <div class="list-group-item list-group-item-dark">
       <div class="d-flex w-100 justify-content-between">
@@ -30,18 +30,18 @@
       </div>
     </div>
 
-    {{#link-to "demo.text-area-autofocus" class="list-group-item list-group-item-action"}}
+    <LinkTo @route="demo.text-area-autofocus" class="list-group-item list-group-item-action">
       Autofocus
-    {{/link-to}}
-    {{#link-to "demo.text-area-select-text" class="list-group-item list-group-item-action"}}
+    </LinkTo>
+    <LinkTo @route="demo.text-area-select-text" class="list-group-item list-group-item-action">
       Select Text
-    {{/link-to}}
-    {{#link-to "demo.text-area-escape-clears" class="list-group-item list-group-item-action"}}
+    </LinkTo>
+    <LinkTo @route="demo.text-area-escape-clears" class="list-group-item list-group-item-action">
       <kbd class="shadow">ESC</kbd> Clears
-    {{/link-to}}
-    {{#link-to "demo.text-area-ctrl-enter-submits" class="list-group-item list-group-item-action"}}
+    </LinkTo>
+    <LinkTo @route="demo.text-area-ctrl-enter-submits" class="list-group-item list-group-item-action">
       <kbd class="shadow">CTRL+ENTER</kbd> Submits
-    {{/link-to}}
-  {{/section.list-group}}
-  {{#section.outlet}}{{outlet}}{{/section.outlet}}
-{{/section-demo}}
+    </LinkTo>
+  </section.list-group>
+  <section.outlet>{{outlet}}</section.outlet>
+</SectionDemo>

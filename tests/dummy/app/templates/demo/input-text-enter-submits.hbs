@@ -1,90 +1,56 @@
 <h3>
   Triggered Via
+  <br />
   <code class="small">
-    {{fa-icon "angle-left"}}form \{{action "withSubmit" on="submit"}}{{fa-icon "angle-right"}}...
+    {{fa-icon "angle-left"}}form
+    \{{on "submit" this.withSubmit}}{{fa-icon "angle-right"}}...
   </code>
 </h3>
 
-<form {{action "withSubmit" on="submit"}}>
+<form {{on "submit" this.withSubmit}}>
   <div class="form-group">
     <label for="js-text-submit-with-on">
-      <kbd>ENTER</kbd> Submits Turned On (DEFAULT Behaviour)
+      <kbd>ENTER</kbd>
+      Submits Turned On (DEFAULT Behaviour)
     </label>
-    {{input-text
-      aria-describedby="js-text-submit-with-on-helpblock"
-      autofocus=true
-      class="form-control"
-      id="js-text-submit-with-on"
-      placeholder="Press ENTER To Submit"
-    }}
+    <InputText
+      @aria-describedby="js-text-submit-with-on-helpblock"
+      @autofocus={{true}}
+      @class="form-control"
+      @id="js-text-submit-with-on"
+      @placeholder="Press ENTER To Submit"
+    />
     <small id="js-text-submit-with-on-helpblock" class="form-text text-muted">
-      <kbd>ENTER</kbd> will submit form :
+      <kbd>ENTER</kbd>
+      will submit form :
       <code>\{{input-text ...}}</code>
     </small>
   </div>
 </form>
-<hr/>
+<hr />
 
-<form {{action "withSubmit" on="submit"}}>
+<form {{on "submit" this.withSubmit}}>
   <div class="form-group">
     <label for="js-text-submit-with-on-off">
-      <kbd>ENTER</kbd> Submits Turned <span class="bg-warning px-1 text-dark">OFF</span>
+      <kbd>ENTER</kbd>
+      Submits Turned
+      <span class="bg-warning px-1 text-dark">OFF</span>
     </label>
-    {{input-text
-      aria-describedby="js-text-submit-with-on-off-helpblock"
-      class="form-control"
-      enterSubmitsForm?=false
-      id="js-text-submit-with-on-off"
-      placeholder="Pressing ENTER Will Not Submit"
-    }}
-    <small id="js-text-submit-with-on-off-helpblock" class="form-text text-muted">
-      <kbd>ENTER</kbd> will <span class="bg-warning px-1 text-dark">NOT</span> submit form :
-      <code>\{{input-text enterSubmitsForm?=false ...}}</code>
-    </small>
-  </div>
-</form>
-
-<h3 class="mt-5">
-  Triggered Via
-  <code class="small">
-    {{fa-icon "angle-left"}}form onsubmit=\{{action "withOnSubmit"}}{{fa-icon "angle-right"}} ...
-  </code>
-</h3>
-
-<form onsubmit={{action "withOnSubmit"}}>
-  <div class="form-group">
-    <label for="js-text-onsubmit">
-      <kbd>ENTER</kbd> Submits Turned On (DEFAULT Behaviour)
-    </label>
-    {{input-text
-      aria-describedby="js-text-onsubmit-helpblock"
-      class="form-control"
-      id="js-text-onsubmit"
-      placeholder="Press ENTER To Submit"
-    }}
-    <small id="js-text-onsubmit-helpblock" class="form-text text-muted">
-      <kbd>ENTER</kbd> will submit form :
-      <code>\{{input-text ...}}</code>
-    </small>
-  </div>
-</form>
-
-<hr/>
-
-<form onsubmit={{action "withOnSubmit"}}>
-  <div class="form-group">
-    <label for="js-text-onsubmit-off">
-      <kbd>ENTER</kbd> Submits Turned <span class="bg-warning px-1 text-dark">OFF</span>
-    </label>
-    {{input-text
-      aria-describedby="js-text-onsubmit-off-helpblock"
-      class="form-control"
-      enterSubmitsForm?=false
-      id="js-text-onsubmit-off"
-      placeholder="Pressing ENTER Will Not Submit"
-    }}
-    <small id="js-text-onsubmit-off-helpblock" class="form-text text-muted">
-      <kbd>ENTER</kbd> will <span class="bg-warning px-1 text-dark">NOT</span> submit form :
+    <InputText
+      @aria-describedby="js-text-submit-with-on-off-helpblock"
+      @class="form-control"
+      @enterSubmitsForm?={{false}}
+      @id="js-text-submit-with-on-off"
+      @placeholder="Pressing ENTER Will Not Submit"
+    />
+    <small
+      id="js-text-submit-with-on-off-helpblock"
+      class="form-text text-muted"
+    >
+      <kbd>ENTER</kbd>
+      will
+      <span class="bg-warning px-1 text-dark">NOT</span>
+      submit form :
       <code>\{{input-text enterSubmitsForm?=false ...}}</code>
     </small>
   </div>
