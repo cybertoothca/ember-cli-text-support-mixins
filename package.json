@@ -57,7 +57,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "clipboard": "^2.0.2",
     "ct-emberjs-bling": "^0.0.1-rc.5",
-    "ember-auto-import": "^1.5.3",
+    "ember-auto-import": "^2.4.1",
     "ember-cli": "~3.16.2",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-bootstrap-4": "^0.13.0",
