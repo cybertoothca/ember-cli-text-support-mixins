@@ -1,10 +1,11 @@
-import { deprecatingAlias } from "@ember/object/computed";
-import Mixin from "@ember/object/mixin";
-/* global KeyEvent */
-import { once } from "@ember/runloop";
+import KeyEvent from 'keyevent';
 
-import ClosestForm from "./closest-form";
-import FormSubmissionUtils from "./form-submission-utils";
+import { deprecatingAlias } from '@ember/object/computed';
+import Mixin from '@ember/object/mixin';
+import { once } from '@ember/runloop';
+
+import ClosestForm from './closest-form';
+import FormSubmissionUtils from './form-submission-utils';
 
 /**
  * When the ENTER is pressed the nearest form up the DOM is triggered for submit.
@@ -16,15 +17,15 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
    * The version 1.x property for pressing enter.  Deprecated in favour of `enterSubmitsForm?`.
    * @deprecated
    */
-  "enterWillSubmitForm?": deprecatingAlias("enterSubmitsForm?", {
-    id: "mixin.enter-submits-form.deprecate-enter-will-submit-form?",
-    until: "2.1.0",
+  'enterWillSubmitForm?': deprecatingAlias('enterSubmitsForm?', {
+    id: 'mixin.enter-submits-form.deprecate-enter-will-submit-form?',
+    until: '2.1.0',
   }),
 
   /**
    * Defaults to `true`.  By default, a text-based input should submit when just the enter key is pressed.
    */
-  "enterSubmitsForm?": true,
+  'enterSubmitsForm?': true,
 
   /**
    * Immediately prevent this ENTER/RETURN key from bubbling.
@@ -33,21 +34,8 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
   insertNewline(event) {
     this._super(...arguments);
 
-    if (
-      this["enterSubmitsForm?"] &&
-      !event.altKey &&
-      !event.ctrlKey &&
-      !event.metaKey &&
-      !event.shiftKey
-    ) {
-      once(
-        this,
-        this._triggerFormSubmission,
-        this.afterAction,
-        this.beforeAction,
-        event,
-        this._form
-      );
+    if (this['enterSubmitsForm?'] && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+      once(this, this._triggerFormSubmission, this.afterAction, this.beforeAction, event, this._form);
     }
   },
 
@@ -59,10 +47,7 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
    */
   keyPress(event) {
     this._super(...arguments);
-    if (
-      event.keyCode === KeyEvent.DOM_VK_ENTER ||
-      event.keyCode === KeyEvent.DOM_VK_RETURN
-    ) {
+    if (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN) {
       event.preventDefault();
     }
   },

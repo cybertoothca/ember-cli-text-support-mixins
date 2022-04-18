@@ -1,10 +1,11 @@
-import { deprecatingAlias } from "@ember/object/computed";
-import Mixin from "@ember/object/mixin";
-/* global KeyEvent */
-import { once } from "@ember/runloop";
+import KeyEvent from 'keyevent';
 
-import ClosestForm from "./closest-form";
-import FormSubmissionUtils from "./form-submission-utils";
+import { deprecatingAlias } from '@ember/object/computed';
+import Mixin from '@ember/object/mixin';
+import { once } from '@ember/runloop';
+
+import ClosestForm from './closest-form';
+import FormSubmissionUtils from './form-submission-utils';
 
 /**
  * When the CTRL+ENTER is pressed the nearest form up the DOM is triggered for submit.
@@ -17,9 +18,9 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
    * The function will receive three parameters: the first is the DOM event, the second is
    * `this` component, and the third is the jQuery wrapped `$form`.
    */
-  afterCtrlEnterSubmitAction: deprecatingAlias("afterSubmit", {
-    id: "mixin.ctrl-enter-submits-form.deprecate-after-ctrl-enter-submit-action",
-    until: "2.1.0",
+  afterCtrlEnterSubmitAction: deprecatingAlias('afterSubmit', {
+    id: 'mixin.ctrl-enter-submits-form.deprecate-after-ctrl-enter-submit-action',
+    until: '2.1.0',
   }),
 
   /**
@@ -27,16 +28,16 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
    * The function will receive three parameters: the first is the DOM event, the second is
    * `this` component, and the third is the jQuery wrapped `$form`.
    */
-  beforeCtrlEnterSubmitAction: deprecatingAlias("beforeSubmit", {
-    id: "mixin.ctrl-enter-submits-form.deprecate-before-ctrl-enter-submit-action",
-    until: "2.1.0",
+  beforeCtrlEnterSubmitAction: deprecatingAlias('beforeSubmit', {
+    id: 'mixin.ctrl-enter-submits-form.deprecate-before-ctrl-enter-submit-action',
+    until: '2.1.0',
   }),
 
   /**
    * When set to `true`, CTRL+ENTER will attempt to submit the nearest form.  Set this to `false` if you do not
    * want this behaviour.  Default value is `false`.
    */
-  "ctrlEnterSubmitsForm?": false,
+  'ctrlEnterSubmitsForm?': false,
 
   /**
    * Immediately prevent this ENTER/RETURN key from bubbling.
@@ -45,15 +46,8 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
   insertNewline(event) {
     this._super(...arguments);
 
-    if (this["ctrlEnterSubmitsForm?"] && event.ctrlKey) {
-      once(
-        this,
-        this._triggerFormSubmission,
-        this.afterAction,
-        this.beforeAction,
-        event,
-        this._form
-      );
+    if (this['ctrlEnterSubmitsForm?'] && event.ctrlKey) {
+      once(this, this._triggerFormSubmission, this.afterAction, this.beforeAction, event, this._form);
     }
   },
 
@@ -66,11 +60,7 @@ export default Mixin.create(ClosestForm, FormSubmissionUtils, {
   keyPress(event) {
     this._super(...arguments);
 
-    if (
-      event.ctrlKey &&
-      (event.keyCode === KeyEvent.DOM_VK_ENTER ||
-        event.keyCode === KeyEvent.DOM_VK_RETURN)
-    ) {
+    if (event.ctrlKey && (event.keyCode === KeyEvent.DOM_VK_ENTER || event.keyCode === KeyEvent.DOM_VK_RETURN)) {
       event.preventDefault();
     }
   },
