@@ -47,6 +47,7 @@
   "dependencies": {
     "ember-auto-import": "^2.4.1",
     "ember-cli-babel": "^7.17.2",
+    "ember-cli-element-closest-polyfill": "^0.0.2",
     "ember-cli-htmlbars": "^6.0.1",
     "keyevent": "^2.0.0"
   },
@@ -72,7 +73,6 @@
     "ember-cli-deploy-gzip": "^2.0.1",
     "ember-cli-deploy-s3": "^3.1.0",
     "ember-cli-deploy-slack": "^1.0.1",
-    "ember-cli-element-closest-polyfill": "^0.0.2",
     "ember-cli-eslint": "^5.1.0",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sass": "^10.0.1",
@@ -96,7 +96,7 @@
     "popper.js": "^1.14.0",
     "prettier": "^2.6.2",
     "qunit-dom": "^2.0.0",
-    "sass": "^1.14.3",
+    "sass": "^1.50.0",
     "webpack": "^5.72.0"
   },
   "engines": {
