@@ -1,5 +1,5 @@
 import { setupApplicationTest } from "ember-qunit";
-/* global KeyEvent */
+import KeyEvent from "keyevent";
 // eslint-disable-next-line no-unused-vars
 import { module, skip, test } from "qunit";
 

@@ -1,7 +1,7 @@
 import { setupRenderingTest } from "ember-qunit";
 import hbs from "htmlbars-inline-precompile";
 /* global jQuery */
-/* global KeyEvent */
+import KeyEvent from "keyevent";
 import { module, skip, test } from "qunit";
 
 import EmberObject from "@ember/object";
